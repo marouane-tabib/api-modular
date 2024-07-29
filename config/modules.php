@@ -29,22 +29,24 @@ return [
         'files' => [
             'routes/web' => 'routes/web.php',
             'routes/api' => 'routes/api.php',
-            'views/index' => 'resources/views/index.blade.php',
-            'views/master' => 'resources/views/layouts/master.blade.php',
+            'request' => 'app/Http/Requests/request.php',
+            // 'views/index' => 'resources/views/index.blade.php',
+            // 'views/master' => 'resources/views/layouts/master.blade.php',
             'scaffold/config' => 'config/config.php',
             'composer' => 'composer.json',
-            'assets/js/app' => 'resources/assets/js/app.js',
-            'assets/sass/app' => 'resources/assets/sass/app.scss',
-            'vite' => 'vite.config.js',
+            // 'assets/js/app' => 'resources/assets/js/app.js',
+            // 'assets/sass/app' => 'resources/assets/sass/app.scss',
+            // 'vite' => 'vite.config.js',
             'package' => 'package.json',
         ],
         'replacements' => [
             'routes/web' => ['LOWER_NAME', 'STUDLY_NAME', 'MODULE_NAMESPACE', 'CONTROLLER_NAMESPACE'],
             'routes/api' => ['LOWER_NAME', 'STUDLY_NAME', 'MODULE_NAMESPACE', 'CONTROLLER_NAMESPACE'],
+            'request' => ['LOWER_NAME', 'STUDLY_NAME', 'MODULE_NAMESPACE', 'CONTROLLER_NAMESPACE'],
             'vite' => ['LOWER_NAME', 'STUDLY_NAME'],
             'json' => ['LOWER_NAME', 'STUDLY_NAME', 'MODULE_NAMESPACE', 'PROVIDER_NAMESPACE'],
-            'views/index' => ['LOWER_NAME'],
-            'views/master' => ['LOWER_NAME', 'STUDLY_NAME'],
+            // 'views/index' => ['LOWER_NAME'],
+            // 'views/master' => ['LOWER_NAME', 'STUDLY_NAME'],
             'scaffold/config' => ['STUDLY_NAME'],
             'composer' => [
                 'LOWER_NAME',
@@ -125,7 +127,7 @@ return [
             'helpers' => ['path' => 'app/Helpers', 'generate' => false],
             'interfaces' => ['path' => 'app/Interfaces', 'generate' => false],
             'listener' => ['path' => 'app/Listeners', 'generate' => false],
-            'model' => ['path' => 'app/Models', 'generate' => false],
+            'model' => ['path' => 'app/Models', 'generate' => true],
             'notifications' => ['path' => 'app/Notifications', 'generate' => false],
             'observer' => ['path' => 'app/Observers', 'generate' => false],
             'policies' => ['path' => 'app/Policies', 'generate' => false],
@@ -141,7 +143,7 @@ return [
             // app/Http/
             'controller' => ['path' => 'app/Http/Controllers', 'generate' => true],
             'filter' => ['path' => 'app/Http/Middleware', 'generate' => false],
-            'request' => ['path' => 'app/Http/Requests', 'generate' => false],
+            'request' => ['path' => 'app/Http/Requests', 'generate' => true],
 
             // config/
             'config' => ['path' => 'config', 'generate' => true],
@@ -155,9 +157,9 @@ return [
             'lang' => ['path' => 'lang', 'generate' => false],
 
             // resource/
-            'assets' => ['path' => 'resources/assets', 'generate' => true],
+            'assets' => ['path' => 'resources/assets', 'generate' => false],
             'component-view' => ['path' => 'resources/views/components', 'generate' => false],
-            'views' => ['path' => 'resources/views', 'generate' => true],
+            'views' => ['path' => 'resources/views', 'generate' => false],
 
             // routes/
             'routes' => ['path' => 'routes', 'generate' => true],
