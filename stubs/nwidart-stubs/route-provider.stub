@@ -24,7 +24,7 @@ class $CLASS$ extends ServiceProvider
     {
         $this->mapApiRoutes();
 
-        $this->mapWebRoutes();
+        // $this->mapWebRoutes();
     }
 
     /**
