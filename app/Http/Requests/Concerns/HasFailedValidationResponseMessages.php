@@ -4,8 +4,8 @@ namespace App\Http\Requests\Concerns;
 
 trait HasFailedValidationResponseMessages
 {
-    protected $messagedRules = [];
-    
+    protected $messagedRules = ['required'];
+
     private array $validationMessages = [
         // Popular
         'required'             => 'Please provide a value for the :attribute field.',
@@ -116,7 +116,7 @@ trait HasFailedValidationResponseMessages
     {
         if (isset($this->messagedRules) || !empty($this->messagedRules)) {
             if (!empty($this->messagedRules) && is_array($this->messagedRules)) {
-                return $this->arrayMultiPluck($this->validationMessages, $this->messagedRules);
+                return arrayMultiPluck($this->validationMessages, $this->messagedRules);
             } else {
                 throw new \InvalidArgumentException("You must specify the messagedRules attribute");
             }
