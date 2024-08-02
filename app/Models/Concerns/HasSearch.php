@@ -8,7 +8,7 @@ trait HasSearch
 {
     protected $search = [];
 
-    public function search($value = ""): ?Model
+    public function search($value = "")
     {
         if (!empty($this->search) && is_array($this->search)) {
             if (!empty($this->search['columns']) && is_array($this->search['columns'])) {
@@ -24,6 +24,6 @@ trait HasSearch
             } else {
                 throw new \Exception("You must specify searchable columns for the query");
             }
-        }
+        } else return $this;
     }
 }
