@@ -47,9 +47,23 @@ class BaseRepository implements Repository
         return $this->model->create($data);
     }
 
+    public function attach(string $relation, array $attributes = []): self
+    {
+        $this->model = $this->model->$relation()->attach($attributes);
+
+        return $this;
+    }
+
     public function update(int $id, array $data): ?int
     {
         return $this->findOrFail($id)->update($data);
+    }
+
+    public function sync(string $relation, array $attributes = []): self
+    {
+        $this->model = $this->model->$relation()->sync($attributes);
+
+        return $this;
     }
 
     public function delete(int $id): ?bool

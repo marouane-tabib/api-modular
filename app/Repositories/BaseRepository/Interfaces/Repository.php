@@ -20,7 +20,11 @@ interface Repository
 
     public function create(array $data): Model;
 
+    public function attach(string $relation, array $attributes = []): self;
+
     public function update(int $id, array $data): ?int;
+
+    public function sync(string $relation, array $attributes = []): self;
 
     public function delete(int $id): ?bool;
 
