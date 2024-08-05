@@ -33,4 +33,6 @@ interface Repository
     public function search(string $search): self;
 
     public function order(string $column, string $direction = 'asc'): self;
+    
+    public function first(array $select = ['*']): ?Model;
 }

@@ -2,6 +2,7 @@
 
 namespace App\Repositories\BaseRepository;
 
+use App\Models\User;
 use App\Repositories\BaseRepository\Interfaces\Repository;
 use Illuminate\Contracts\Pagination\Paginator;
 use Illuminate\Database\Eloquent\Collection;
@@ -11,7 +12,7 @@ class BaseRepository implements Repository
 {
     protected $model;
 
-    public function __construct(Model $model)
+    public function __construct(User $model)
     {
         $this->model = $model;
     }
@@ -89,5 +90,10 @@ class BaseRepository implements Repository
         $this->model = $this->model->orderBy($column, $direction);
 
         return $this;
+    }
+
+    public function first(array $select = ['*']): ?Model
+    {
+        return $this->model->first($select);
     }
 }
