@@ -22,7 +22,7 @@ class BaseService implements Service
         return $this->repository
             ->search($data['search'] ?? '')
             ->order($data['column'] ?? 'id', $data['direction'] ?? 'asc')
-            ->get();
+            ->paginate($data['paginate'] ?? 10);
     }
 
     public function store(array $data): Model
