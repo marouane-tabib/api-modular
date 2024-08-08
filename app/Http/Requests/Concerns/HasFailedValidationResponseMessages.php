@@ -116,10 +116,15 @@ trait HasFailedValidationResponseMessages
     {
         if (isset($this->messagedRules) || !empty($this->messagedRules)) {
             if (!empty($this->messagedRules) && is_array($this->messagedRules)) {
-                return arrayMultiPluck($this->validationMessages, $this->messagedRules);
+                return $this->arrayMultiPluck($this->validationMessages, $this->messagedRules);
             } else {
                 throw new \InvalidArgumentException("You must specify the messagedRules attribute");
             }
         }
+    }
+
+    public function arrayMultiPluck(array $array, array $keys): array
+    {
+        return array_intersect_key($array, array_flip($keys));
     }
 }
