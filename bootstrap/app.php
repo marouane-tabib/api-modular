@@ -35,9 +35,15 @@ return Application::configure(basePath: dirname(__DIR__))
         ]);
         $exceptions->reportable(function (Throwable $exception) {
             Bugsnag::notifyException($exception, function ($report) use ($exception) {
+                if ($exception instanceof Exception) {
+                    $throwableType = 'warning';
+                } elseif ($exception instanceof Error) {
+                    $throwableType = 'error';
+                }
                 $request = new Request();
                 $report->setMetaData([
                     'exception' => [
+                        'severity_level' => isset($throwableType)? $report->setSeverity($throwableType): null,
                         'exception' => (new ReflectionClass($exception))->getShortName(),
                         'message' => $exception->getMessage(),
                         'file' => $exception->getFile(),
