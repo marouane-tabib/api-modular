@@ -20,6 +20,10 @@
         {
             "type": "vcs",
             "url": "https://github.com/agus24/laravel-query-detector"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/marouane-tabib/laravel-query-log"
         }
     ],
     "require-dev": {
@@ -30,7 +34,8 @@
         "nunomaduro/collision": "^8.0",
         "pestphp/pest": "^2.0",
         "pestphp/pest-plugin-laravel": "^2.0",
-        "beyondcode/laravel-query-detector": "dev-master"
+        "beyondcode/laravel-query-detector": "dev-master",
+        "haruncpi/laravel-query-log": "dev-master"
     },
     "autoload": {
         "files": [
