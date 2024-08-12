@@ -14,7 +14,8 @@
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.9",
         "livewire/livewire": "^3.0",
-        "nwidart/laravel-modules": "^11.0"
+        "nwidart/laravel-modules": "^11.0",
+        "spatie/laravel-http-logger": "^1.11"
     },
     "repositories": [
         {
