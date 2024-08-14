@@ -3,6 +3,10 @@
 return [
 
     /*
+     * Determine if the http-logger middleware should be enabled.
+     */
+    'enabled' => env('HTTP_LOGGER_ENABLED', true),
+    /*
      * The log profile which determines whether a request should be logged.
      * It should implement `LogProfile`.
      */
@@ -38,4 +42,12 @@ return [
     'sanitize_headers' => [
         'Authorization'
     ],
+    
+    'meta_data' => [
+        'release_version' => getReleaseVersion(),
+        'commit_hash' => getCommitHash(),
+        'commit_author' => getCommitAuthor(),
+        'commit_date' => getCommitDate(),
+        'author' => getAuthor(),
+    ]
 ];
