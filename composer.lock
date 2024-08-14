@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0b817a2c7ff0457adde7fc3651b6fe34",
+    "content-hash": "795cb5fae92518fabc00b905fcad3c97",
     "packages": [
         {
             "name": "andreaselia/laravel-api-to-postman",
@@ -135,6 +135,78 @@
                 "source": "https://github.com/Bacon/BaconQrCode/tree/v3.0.0"
             },
             "time": "2024-04-18T11:16:25+00:00"
+        },
+        {
+            "name": "beyondcode/laravel-query-detector",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/agus24/laravel-query-detector.git",
+                "reference": "ac4b07e0972db6a0a332b579293ff45f9d421c0d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/agus24/laravel-query-detector/zipball/ac4b07e0972db6a0a332b579293ff45f9d421c0d",
+                "reference": "ac4b07e0972db6a0a332b579293ff45f9d421c0d",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^5.5 || ^6.0 || ^7.0 || ^8.0 || ^9.0|^10.0 || ^11.0",
+                "php": "^7.1 || ^8.0"
+            },
+            "require-dev": {
+                "laravel/legacy-factories": "^1.0",
+                "orchestra/testbench": "^3.0 || ^4.0 || ^5.0 || ^6.0|^8.0",
+                "phpunit/phpunit": "^7.0 || ^8.0 || ^9.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "BeyondCode\\QueryDetector\\QueryDetectorServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "BeyondCode\\QueryDetector\\": "src"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "BeyondCode\\QueryDetector\\Tests\\": "tests"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "vendor/bin/phpunit"
+                ],
+                "test-coverage": [
+                    "vendor/bin/phpunit --coverage-html coverage"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marcel Pociot",
+                    "email": "marcel@beyondco.de",
+                    "homepage": "https://beyondcode.de",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Laravel N+1 Query Detector",
+            "homepage": "https://github.com/beyondcode/laravel-query-detector",
+            "keywords": [
+                "beyondcode",
+                "laravel-query-detector"
+            ],
+            "support": {
+                "source": "https://github.com/agus24/laravel-query-detector/tree/master"
+            },
+            "time": "2024-04-22T06:48:35+00:00"
         },
         {
             "name": "brick/math",
@@ -1564,6 +1636,52 @@
             "time": "2023-12-03T19:50:20+00:00"
         },
         {
+            "name": "haruncpi/laravel-query-log",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/marouane-tabib/laravel-query-log.git",
+                "reference": "f9444b4b77c4f49cf91b98a10f6ccd3e4eeb7099"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/marouane-tabib/laravel-query-log/zipball/f9444b4b77c4f49cf91b98a10f6ccd3e4eeb7099",
+                "reference": "f9444b4b77c4f49cf91b98a10f6ccd3e4eeb7099",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Haruncpi\\QueryLog\\QueryLogServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Haruncpi\\QueryLog\\": "src/"
+                }
+            },
+            "license": [
+                "cc-by-4.0"
+            ],
+            "authors": [
+                {
+                    "name": "Md.Harun-Ur-Rashid",
+                    "email": "harun.cox@gmail.com"
+                }
+            ],
+            "description": "Log your all laravel sql query",
+            "support": {
+                "source": "https://github.com/marouane-tabib/laravel-query-log/tree/master"
+            },
+            "time": "2024-08-14T16:16:57+00:00"
+        },
+        {
             "name": "laravel/fortify",
             "version": "v1.23.0",
             "source": {
@@ -2218,16 +2336,16 @@
         },
         {
             "name": "league/commonmark",
-            "version": "2.5.1",
+            "version": "2.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/commonmark.git",
-                "reference": "ac815920de0eff6de947eac0a6a94e5ed0fb147c"
+                "reference": "df09d5b6a4188f8f3c3ab2e43a109076a5eeb767"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/ac815920de0eff6de947eac0a6a94e5ed0fb147c",
-                "reference": "ac815920de0eff6de947eac0a6a94e5ed0fb147c",
+                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/df09d5b6a4188f8f3c3ab2e43a109076a5eeb767",
+                "reference": "df09d5b6a4188f8f3c3ab2e43a109076a5eeb767",
                 "shasum": ""
             },
             "require": {
@@ -2320,7 +2438,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-07-24T12:52:09+00:00"
+            "time": "2024-08-14T10:56:57+00:00"
         },
         {
             "name": "league/config",
@@ -4349,16 +4467,16 @@
         },
         {
             "name": "spatie/laravel-http-logger",
-            "version": "1.11.0",
+            "version": "dev-main",
             "source": {
                 "type": "git",
-                "url": "https://github.com/spatie/laravel-http-logger.git",
-                "reference": "96c18c32999e2e4142e157a71f51d467da29fa98"
+                "url": "https://github.com/marouane-tabib/spatie-laravel-http-logger.git",
+                "reference": "cfb2854bfa515b1aad57f344ae8db12c493a36ac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-http-logger/zipball/96c18c32999e2e4142e157a71f51d467da29fa98",
-                "reference": "96c18c32999e2e4142e157a71f51d467da29fa98",
+                "url": "https://api.github.com/repos/marouane-tabib/spatie-laravel-http-logger/zipball/cfb2854bfa515b1aad57f344ae8db12c493a36ac",
+                "reference": "cfb2854bfa515b1aad57f344ae8db12c493a36ac",
                 "shasum": ""
             },
             "require": {
@@ -4370,6 +4488,7 @@
                 "pestphp/pest": "^1.22|^2.34",
                 "phpunit/phpunit": "^9.0|^10.5"
             },
+            "default-branch": true,
             "type": "library",
             "extra": {
                 "laravel": {
@@ -4383,7 +4502,16 @@
                     "Spatie\\HttpLogger\\": "src"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "autoload-dev": {
+                "psr-4": {
+                    "Spatie\\HttpLogger\\Test\\": "tests"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "vendor/bin/pest"
+                ]
+            },
             "license": [
                 "MIT"
             ],
@@ -4402,16 +4530,15 @@
                 "spatie"
             ],
             "support": {
-                "issues": "https://github.com/spatie/laravel-http-logger/issues",
-                "source": "https://github.com/spatie/laravel-http-logger/tree/1.11.0"
+                "source": "https://github.com/marouane-tabib/spatie-laravel-http-logger/tree/main"
             },
             "funding": [
                 {
-                    "url": "https://spatie.be/open-source/support-us",
-                    "type": "custom"
+                    "type": "custom",
+                    "url": "https://spatie.be/open-source/support-us"
                 }
             ],
-            "time": "2024-03-02T05:42:55+00:00"
+            "time": "2024-08-14T13:33:54+00:00"
         },
         {
             "name": "symfony/clock",
@@ -7041,78 +7168,6 @@
     ],
     "packages-dev": [
         {
-            "name": "beyondcode/laravel-query-detector",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/agus24/laravel-query-detector.git",
-                "reference": "ac4b07e0972db6a0a332b579293ff45f9d421c0d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/agus24/laravel-query-detector/zipball/ac4b07e0972db6a0a332b579293ff45f9d421c0d",
-                "reference": "ac4b07e0972db6a0a332b579293ff45f9d421c0d",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/support": "^5.5 || ^6.0 || ^7.0 || ^8.0 || ^9.0|^10.0 || ^11.0",
-                "php": "^7.1 || ^8.0"
-            },
-            "require-dev": {
-                "laravel/legacy-factories": "^1.0",
-                "orchestra/testbench": "^3.0 || ^4.0 || ^5.0 || ^6.0|^8.0",
-                "phpunit/phpunit": "^7.0 || ^8.0 || ^9.0"
-            },
-            "default-branch": true,
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "BeyondCode\\QueryDetector\\QueryDetectorServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "BeyondCode\\QueryDetector\\": "src"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "BeyondCode\\QueryDetector\\Tests\\": "tests"
-                }
-            },
-            "scripts": {
-                "test": [
-                    "vendor/bin/phpunit"
-                ],
-                "test-coverage": [
-                    "vendor/bin/phpunit --coverage-html coverage"
-                ]
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Marcel Pociot",
-                    "email": "marcel@beyondco.de",
-                    "homepage": "https://beyondcode.de",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Laravel N+1 Query Detector",
-            "homepage": "https://github.com/beyondcode/laravel-query-detector",
-            "keywords": [
-                "beyondcode",
-                "laravel-query-detector"
-            ],
-            "support": {
-                "source": "https://github.com/agus24/laravel-query-detector/tree/master"
-            },
-            "time": "2024-04-22T06:48:35+00:00"
-        },
-        {
             "name": "brianium/paratest",
             "version": "v7.4.3",
             "source": {
@@ -7498,52 +7553,6 @@
                 "source": "https://github.com/hamcrest/hamcrest-php/tree/v2.0.1"
             },
             "time": "2020-07-09T08:09:16+00:00"
-        },
-        {
-            "name": "haruncpi/laravel-query-log",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/marouane-tabib/laravel-query-log.git",
-                "reference": "374dca0d817ad31b58fe66353edac37d6f1c7014"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/marouane-tabib/laravel-query-log/zipball/374dca0d817ad31b58fe66353edac37d6f1c7014",
-                "reference": "374dca0d817ad31b58fe66353edac37d6f1c7014",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.6.0"
-            },
-            "default-branch": true,
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Haruncpi\\QueryLog\\QueryLogServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Haruncpi\\QueryLog\\": "src/"
-                }
-            },
-            "license": [
-                "cc-by-4.0"
-            ],
-            "authors": [
-                {
-                    "name": "Md.Harun-Ur-Rashid",
-                    "email": "harun.cox@gmail.com"
-                }
-            ],
-            "description": "Log your all laravel sql query",
-            "support": {
-                "source": "https://github.com/marouane-tabib/laravel-query-log/tree/master"
-            },
-            "time": "2024-08-10T20:31:43+00:00"
         },
         {
             "name": "jean85/pretty-package-versions",
@@ -9115,16 +9124,16 @@
         },
         {
             "name": "sebastian/comparator",
-            "version": "5.0.1",
+            "version": "5.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/comparator.git",
-                "reference": "2db5010a484d53ebf536087a70b4a5423c102372"
+                "reference": "2d3e04c3b4c1e84a5e7382221ad8883c8fbc4f53"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/comparator/zipball/2db5010a484d53ebf536087a70b4a5423c102372",
-                "reference": "2db5010a484d53ebf536087a70b4a5423c102372",
+                "url": "https://api.github.com/repos/sebastianbergmann/comparator/zipball/2d3e04c3b4c1e84a5e7382221ad8883c8fbc4f53",
+                "reference": "2d3e04c3b4c1e84a5e7382221ad8883c8fbc4f53",
                 "shasum": ""
             },
             "require": {
@@ -9135,7 +9144,7 @@
                 "sebastian/exporter": "^5.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^10.3"
+                "phpunit/phpunit": "^10.4"
             },
             "type": "library",
             "extra": {
@@ -9180,7 +9189,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/comparator/issues",
                 "security": "https://github.com/sebastianbergmann/comparator/security/policy",
-                "source": "https://github.com/sebastianbergmann/comparator/tree/5.0.1"
+                "source": "https://github.com/sebastianbergmann/comparator/tree/5.0.2"
             },
             "funding": [
                 {
@@ -9188,7 +9197,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-08-14T13:18:12+00:00"
+            "time": "2024-08-12T06:03:08+00:00"
         },
         {
             "name": "sebastian/complexity",
@@ -10046,7 +10055,8 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "beyondcode/laravel-query-detector": 20,
-        "haruncpi/laravel-query-log": 20
+        "haruncpi/laravel-query-log": 20,
+        "spatie/laravel-http-logger": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
