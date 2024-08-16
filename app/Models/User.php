@@ -14,6 +14,7 @@ use Laravel\Jetstream\HasTeams;
 use Laravel\Sanctum\HasApiTokens;
 use OwenIt\Auditing\Auditable;
 use OwenIt\Auditing\Contracts\Auditable as ContractsAuditable;
+use Rappasoft\LaravelAuthenticationLog\Traits\AuthenticationLoggable;
 
 class User extends Authenticatable implements ContractsAuditable
 {
@@ -25,6 +26,7 @@ class User extends Authenticatable implements ContractsAuditable
     use TwoFactorAuthenticatable;
     use HasSearch;
     use Auditable;
+    use AuthenticationLoggable;
 
     /**
      * The attributes that are mass assignable.
