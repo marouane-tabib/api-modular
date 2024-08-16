@@ -27,7 +27,6 @@ return [
     'user'      => [
         'morph_prefix' => 'user',
         'guards'       => [
-            'web',
             'api'
         ],
         'resolver'     => OwenIt\Auditing\Resolvers\UserResolver::class
@@ -128,7 +127,7 @@ return [
     |
     */
 
-    'timestamps' => false,
+    'timestamps' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -194,5 +193,5 @@ return [
     |
     */
 
-    'console' => false,
+    'console' => true,
 ];
