@@ -18,7 +18,7 @@ return [
     |
     */
 
-    'default' => env('LOG_CHANNEL', 'stack'),
+    'default' => env('LOG_CHANNEL', 'null'),  // Set default to 'null'
 
     /*
     |--------------------------------------------------------------------------
@@ -51,12 +51,6 @@ return [
     */
 
     'channels' => [
-
-        'stack' => [
-            'driver' => 'stack',
-            'channels' => explode(',', env('LOG_STACK', 'single')),
-            'ignore_exceptions' => false,
-        ],
 
         'single' => [
             'driver' => 'single',
@@ -126,7 +120,7 @@ return [
         'emergency' => [
             'path' => storage_path('logs/laravel.log'),
         ],
-        // Create a bugsnag logging channel:
+
         'bugsnag' => [
             'driver' => 'bugsnag',
         ],
