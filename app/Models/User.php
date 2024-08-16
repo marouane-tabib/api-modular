@@ -12,8 +12,10 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Jetstream\HasTeams;
 use Laravel\Sanctum\HasApiTokens;
+use OwenIt\Auditing\Auditable;
+use OwenIt\Auditing\Contracts\Auditable as ContractsAuditable;
 
-class User extends Authenticatable
+class User extends Authenticatable implements ContractsAuditable
 {
     use HasApiTokens;
     use HasFactory;
@@ -22,6 +24,7 @@ class User extends Authenticatable
     use Notifiable;
     use TwoFactorAuthenticatable;
     use HasSearch;
+    use Auditable;
 
     /**
      * The attributes that are mass assignable.
