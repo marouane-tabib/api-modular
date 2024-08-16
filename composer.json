@@ -7,16 +7,17 @@
     "require": {
         "php": "^8.2",
         "andreaselia/laravel-api-to-postman": "^2.0",
+        "beyondcode/laravel-query-detector": "dev-master",
         "bugsnag/bugsnag-laravel": "^2.28",
         "flugger/laravel-responder": "^3.4",
+        "haruncpi/laravel-query-log": "dev-master",
         "laravel/framework": "^11.9",
         "laravel/jetstream": "^5.1",
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.9",
         "livewire/livewire": "^3.0",
         "nwidart/laravel-modules": "^11.0",
-        "beyondcode/laravel-query-detector": "dev-master",
-        "haruncpi/laravel-query-log": "dev-master",
+        "owen-it/laravel-auditing": "^13.6",
         "spatie/laravel-http-logger": "dev-main"
     },
     "repositories": [
