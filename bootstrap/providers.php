@@ -5,4 +5,5 @@ return [
     App\Providers\FortifyServiceProvider::class,
     App\Providers\JetstreamServiceProvider::class,
     Bugsnag\BugsnagLaravel\BugsnagServiceProvider::class,
+    OwenIt\Auditing\AuditingServiceProvider::class,
 ];
