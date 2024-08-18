@@ -60,14 +60,7 @@ return Application::configure(basePath: dirname(__DIR__))
                         'method' => $request->method(),
                         'headers' => request()->except(['authorization', 'cookie', 'password', 'password_confirmation', 'current_password']),
                         'body' => request()->except(['password', 'password_confirmation', 'current_password']),
-                        // 'headers' => $this->getSanitizer()->clean(
-                        //     $request->headers->all(),
-                        //     ['authorization', 'cookie']
-                        // ),
-                        // 'input' => $this->getSanitizer()->clean(
-                        //     $request->all(),
-                        //     ['password', 'password_confirmation', 'current_password']
-                        // ),
+
                         'query' => $request->query(),
                         'from' => $request->query('from', 'N/A'),
                         'to' => $request->query('to', 'N/A'),
