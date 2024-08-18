@@ -34,13 +34,14 @@ return [
     'except' => [
         'password',
         'password_confirmation',
+        'current_password',
     ],
 
     /*
      * List of headers that will be sanitized. For example Authorization, Cookie, Set-Cookie...
      */
     'sanitize_headers' => [
-        'Authorization'
+        'authorization', 'cookie', 'password', 'password_confirmation', 'current_password'
     ],
     
     'meta_data' => [
