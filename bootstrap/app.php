@@ -43,7 +43,8 @@ return Application::configure(basePath: dirname(__DIR__))
                     $throwableType = 'error';
                 }
                 $request = new Request();
-                $report->setMetaData([
+                $report->setMetaData([  
+                    'timestamp' => gmdate('c'),
                     'exception' => [
                         'severity_level' => isset($throwableType)? $report->setSeverity($throwableType): null,
                         'exception' => (new ReflectionClass($exception))->getShortName(),
@@ -57,8 +58,16 @@ return Application::configure(basePath: dirname(__DIR__))
                     'request' => [
                         'url' => $request->fullUrl(),
                         'method' => $request->method(),
-                        'headers' => $request->headers->all(),
-                        'input' => $request->all(),
+                        'headers' => request()->except(['authorization', 'cookie', 'password', 'password_confirmation', 'current_password']),
+                        'body' => request()->except(['password', 'password_confirmation', 'current_password']),
+                        // 'headers' => $this->getSanitizer()->clean(
+                        //     $request->headers->all(),
+                        //     ['authorization', 'cookie']
+                        // ),
+                        // 'input' => $this->getSanitizer()->clean(
+                        //     $request->all(),
+                        //     ['password', 'password_confirmation', 'current_password']
+                        // ),
                         'query' => $request->query(),
                         'from' => $request->query('from', 'N/A'),
                         'to' => $request->query('to', 'N/A'),
