@@ -125,6 +125,10 @@ return [
             'driver' => 'bugsnag',
         ],
 
+        'custom_json' => [
+            'driver' => 'custom',
+            'via' => App\Logging\CustomLogChannel::class,
+        ],
     ],
 
 ];
