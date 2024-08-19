@@ -49,7 +49,19 @@ class CustomLogChannel
 
     protected function getProcessors()
     {
-        $extra = [
+        $extra = self::processors();
+
+        return [
+            function ($record) use ($extra) {
+                $record['extra'] = $extra;
+                return $record;
+            },
+        ];
+    }
+
+    public static function processors()
+    {
+        return [
             'timestamp' => gmdate('c'),
             'request' => [
                 'url' => request()->fullUrl(),
@@ -86,13 +98,6 @@ class CustomLogChannel
                 'commit_date' => getCommitDate(),
                 'author' => getAuthor(),
             ]
-        ];
-
-        return [
-            function ($record) use ($extra) {
-                $record['extra'] = $extra;
-                return $record;
-            },
         ];
     }
 }
