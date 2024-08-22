@@ -1,5 +1,6 @@
 <?php
 
+use Elastic\Elasticsearch\ClientBuilder;
 use Monolog\Handler\NullHandler;
 use Monolog\Handler\StreamHandler;
 use Monolog\Handler\SyslogUdpHandler;
@@ -123,6 +124,23 @@ return [
 
         'bugsnag' => [
             'driver' => 'bugsnag',
+        ],
+
+        'elasticsearch' => [
+            'driver' => 'monolog',
+            'level' => 'debug',
+            'handler' => \Monolog\Handler\ElasticsearchHandler::class,
+            'formatter' => \Monolog\Formatter\ElasticsearchFormatter::class,
+            'formatter_with' => [
+                'index' => env('ELASTIC_INDEX'),
+                'type' => '_doc',
+            ],
+            'handler_with' => [
+                'client' => ClientBuilder::create()
+                ->setHosts([env('ELASTIC_HOST')])
+                ->setBasicAuthentication(env('ELASTIC_USERNAME'), env('ELASTIC_PASSWORD'))
+                ->build(),
+            ]
         ],
 
         'custom_json' => [
