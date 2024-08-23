@@ -147,6 +147,12 @@ return [
             'driver' => 'custom',
             'via' => App\Logging\CustomLogChannel::class,
         ],
+
+        'stack' => [
+            'driver' => 'stack',
+            'channels' => ['custom_json', 'elasticsearch'],
+            'ignore_exceptions' => true,
+        ],
     ],
 
 ];
