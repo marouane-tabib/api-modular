@@ -1,11 +1,13 @@
-<?php namespace App\Exceptions;
+<?php
+
+namespace App\Exceptions;
 
 use App\Logging\CustomLogChannel;
+use App\Logging\Processors\ContextExceptionProcessor;
 use Bugsnag\BugsnagLaravel\Facades\Bugsnag;
 use Error;
 use Exception;
 use Illuminate\Http\Request;
-use ReflectionClass;
 use Throwable;
 
 class GeneralExceptionHandler
@@ -34,39 +36,36 @@ class GeneralExceptionHandler
     public function reportable(Throwable $exception)
     {
         Bugsnag::notifyException($exception, function ($report) use ($exception) {
+            $throwableType = null;
             if ($exception instanceof Exception) {
                 $throwableType = 'warning';
             } elseif ($exception instanceof Error) {
                 $throwableType = 'error';
             }
             
+            isset($throwableType) ?? $report->setSeverity($throwableType);
             $report->setMetaData(CustomLogChannel::processors());
             $report->setMetaData([  
                 'timestamp' => gmdate('c'),
-                'exception' => [
-                    'severity_level' => isset($throwableType) ? $report->setSeverity($throwableType) : null,
-                    'exception' => (new ReflectionClass($exception))->getShortName(),
-                    'message' => $exception->getMessage(),
-                    'file' => $exception->getFile(),
-                    'line' => $exception->getLine(),
-                    'code' => $exception->getCode(),
-                ],
+                'severity_level' => $throwableType,
+                'exception' =>  $this->exceptionProcessor($exception)
             ]);
         });
     }
 
-    public function render(Throwable $e, Request $request)
+    public function render(Throwable $throwable, Request $request)
     {   
         if ($request->wantsJson()) {
             return responder()->error(message: "An unexpected error occurred. Please try again later.")->data([
-                "errors" => config('app.rest_debug') && isset($e) ? [
-                    "exception" => (new ReflectionClass($e))->getShortName(),
-                    "message"   => $e->getMessage(),
-                    "file"      => $e->getFile(),
-                    "line"      => $e->getLine(),
-                    "code"      => $e->getCode(),
-                ] : true,
+                "exception" => config('app.rest_debug')? $this->exceptionProcessor($throwable): true,
             ])->respond();
+        }
+    }
+
+    public function exceptionProcessor(Throwable $throwable)
+    {
+        if (isset($throwable)) {
+            return (new ContextExceptionProcessor())($throwable);
         }
     }
 }
