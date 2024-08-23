@@ -34,7 +34,7 @@ class SendLogsToElasticsearch extends Command
     
      public function handle()
      {
-         $date = Carbon::today();
+         $date = Carbon::yesterday();
          $logFilePath = storage_path('logs/info/' . $date->format('Y-m') . '/http_requests/' . $date->format('Y-m-d') . '.log');
  
          if (File::exists($logFilePath)) {
