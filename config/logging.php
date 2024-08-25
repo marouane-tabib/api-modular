@@ -126,13 +126,47 @@ return [
             'driver' => 'bugsnag',
         ],
 
-        'elasticsearch' => [
+        'elastic_error_generale' => [
             'driver' => 'monolog',
             'level' => 'debug',
             'handler' => \Monolog\Handler\ElasticsearchHandler::class,
             'formatter' => \Monolog\Formatter\ElasticsearchFormatter::class,
             'formatter_with' => [
-                'index' => env('ELASTIC_INDEX'),
+                'index' => env('ELASTIC_ERROR_INDEX'),
+                'type' => '_doc',
+            ],
+            'handler_with' => [
+                'client' => ClientBuilder::create()
+                ->setHosts([env('ELASTIC_HOST')])
+                ->setBasicAuthentication(env('ELASTIC_USERNAME'), env('ELASTIC_PASSWORD'))
+                ->build(),
+            ]
+        ],
+
+        'elastic_info_http' => [
+            'driver' => 'monolog',
+            'level' => 'debug',
+            'handler' => \Monolog\Handler\ElasticsearchHandler::class,
+            'formatter' => \Monolog\Formatter\ElasticsearchFormatter::class,
+            'formatter_with' => [
+                'index' => env('ELASTIC_HTTP_INDEX'),
+                'type' => '_doc',
+            ],
+            'handler_with' => [
+                'client' => ClientBuilder::create()
+                ->setHosts([env('ELASTIC_HOST')])
+                ->setBasicAuthentication(env('ELASTIC_USERNAME'), env('ELASTIC_PASSWORD'))
+                ->build(),
+            ]
+        ],
+
+        'elastic_info_queries' => [
+            'driver' => 'monolog',
+            'level' => 'debug',
+            'handler' => \Monolog\Handler\ElasticsearchHandler::class,
+            'formatter' => \Monolog\Formatter\ElasticsearchFormatter::class,
+            'formatter_with' => [
+                'index' => env('ELASTIC_QUERY_INDEX'),
                 'type' => '_doc',
             ],
             'handler_with' => [
@@ -150,7 +184,7 @@ return [
 
         'stack' => [
             'driver' => 'stack',
-            'channels' => ['custom_json', 'elasticsearch'],
+            'channels' => ['custom_json', 'elastic_error_generale'],
             'ignore_exceptions' => true,
         ],
     ],
