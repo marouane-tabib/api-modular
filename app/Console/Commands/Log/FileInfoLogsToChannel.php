@@ -13,14 +13,14 @@ class FileInfoLogsToChannel extends Command
      *
      * @var string
      */
-    protected $signature = 'logs:send-to-elasticsearch {infoDirectory} {channel="elasticsearch"}';
+    protected $signature = 'logs:info-to-channel {infoDirectory} {channel}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Send daily logs to Elasticsearch';
+    protected $description = 'Send daily logs to Channel';
 
     public function __construct()
     {
