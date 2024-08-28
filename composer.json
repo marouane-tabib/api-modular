@@ -19,7 +19,8 @@
         "owen-it/laravel-auditing": "^13.6",
         "rappasoft/laravel-authentication-log": "^4.0",
         "spatie/laravel-http-logger": "dev-main",
-        "torann/geoip": "^3.0"
+        "torann/geoip": "^3.0",
+        "tymon/jwt-auth": "^2.1"
     },
     "repositories": [
         {
