@@ -8,6 +8,7 @@ use Illuminate\Notifications\Notifiable;
 use OwenIt\Auditing\Auditable;
 use OwenIt\Auditing\Contracts\Auditable as ContractsAuditable;
 use Rappasoft\LaravelAuthenticationLog\Traits\AuthenticationLoggable;
+use Spatie\Permission\Traits\HasRoles;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 
 class User extends Authenticatable implements ContractsAuditable, JWTSubject
@@ -17,6 +18,7 @@ class User extends Authenticatable implements ContractsAuditable, JWTSubject
     use HasSearch;
     use Auditable;
     use AuthenticationLoggable;
+    use HasRoles;
 
     /**
      * The attributes that are mass assignable.
