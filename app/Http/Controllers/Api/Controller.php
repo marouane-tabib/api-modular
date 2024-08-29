@@ -27,7 +27,7 @@ class Controller extends BaseController
 
     public function store(ApiRequest $request)
     {
-        return $this->responder->success($this->service->store($request->validated()));
+        return $this->responder->success($this->service->store($request->all()));
     }
 
     public function update(ApiRequest $request, $id)
