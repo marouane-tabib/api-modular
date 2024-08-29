@@ -2,14 +2,16 @@
 
 namespace App\Logging\Processors;
 
+use Illuminate\Support\Facades\Auth;
+
 class ContextUserProcessor 
 {
     public function __invoke()
     {
         return [
-            'id' => auth()->check() ? auth()->id() : 'N/A',
-            'name' => auth()->check() ? auth()->user()->name : 'N/A',
-            'email' => auth()->check() ? auth()->user()->email : 'N/A',
+            'id' => Auth::check() ? Auth::user()->id : 'N/A',
+            'name' => Auth::check() ? Auth::user()->name : 'N/A',
+            'email' => Auth::check() ? Auth::user()->email : 'N/A',
         ];
     }
 }
