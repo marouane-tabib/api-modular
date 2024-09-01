@@ -7,6 +7,10 @@ use App\Repositories\BaseRepository\Interfaces\Repository;
 use App\Services\BaseService\BaseService;
 use App\Services\BaseService\Interfaces\Service;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Cache\RateLimiting\Limit;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\RateLimiter;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -24,6 +28,16 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        $this->configureRateLimiting();
+    }
+
+    protected function configureRateLimiting()
+    {
+        RateLimiter::for('user_throttle', function (Request $request) {
+            return [
+                Limit::perSecond(1)->by(Auth::user()?->id),
+                Limit::perMinute(30)->by($request->ip()),
+            ];
+        });
     }
 }
