@@ -15,5 +15,8 @@ class Authenticatable extends Model implements
     AuthorizableContract,
     CanResetPasswordContract
 {
-    use AuthenticatableConcern, Authorizable, CanResetPassword, MustVerifyEmail;
+    use AuthenticatableConcern;
+    use Authorizable;
+    use CanResetPassword;
+    use MustVerifyEmail;
 }

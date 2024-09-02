@@ -59,7 +59,7 @@ class FileLogToChannel extends Command
             $this->error("Log file not found: $filePath");
             return 1;
         }
-        
+
         return 0;
     }
 }

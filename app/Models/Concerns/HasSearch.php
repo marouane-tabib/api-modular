@@ -2,8 +2,6 @@
 
 namespace App\Models\Concerns;
 
-use App\Models\Model;
-
 trait HasSearch
 {
     protected $search = [];
@@ -24,6 +22,8 @@ trait HasSearch
             } else {
                 throw new \Exception("You must specify searchable columns for the query");
             }
-        } else return $this;
+        } else {
+            return $this;
+        }
     }
 }

@@ -43,7 +43,7 @@ return [
     'sanitize_headers' => [
         'authorization', 'cookie', 'password', 'password_confirmation', 'current_password'
     ],
-    
+
     'meta_data' => [
         'release_version' => getReleaseVersion(),
         'commit_hash' => getCommitHash(),

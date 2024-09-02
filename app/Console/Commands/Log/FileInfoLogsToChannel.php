@@ -54,7 +54,7 @@ class FileInfoLogsToChannel extends Command
         ]);
 
         $this->info("Logs from $logFilePath have been sent to Elasticsearch successfully.");
-        
+
         return 0;
     }
 }

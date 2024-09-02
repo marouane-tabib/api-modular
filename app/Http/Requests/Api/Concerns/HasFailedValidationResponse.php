@@ -16,7 +16,8 @@ trait HasFailedValidationResponse
                     "success" => false,
                     "message" => "Validation errors",
                     "errors"  => $validator->errors(),
-                ], 422
+                ],
+                422
             )
         );
     }

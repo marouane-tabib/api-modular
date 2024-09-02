@@ -5,7 +5,7 @@ namespace App\Logging\Processors;
 use ReflectionClass;
 use Throwable;
 
-class ContextExceptionProcessor 
+class ContextExceptionProcessor
 {
     public function __invoke(Throwable $throwable)
     {

@@ -8,12 +8,12 @@ use App\Services\BaseService\Interfaces\Service;
 use Flugg\Responder\Responder;
 
 class Controller extends BaseController
-{    
+{
     public function __construct(
         protected Service $service,
         protected Responder $responder
-    )
-    {}
+    ) {
+    }
 
     public function index(ApiRequest $request)
     {
@@ -34,7 +34,7 @@ class Controller extends BaseController
     {
         return $this->responder->success($this->service->update($id, $request->validated()));
     }
-    
+
     public function destroy($id)
     {
         return $this->responder->success($this->service->destroy($id));

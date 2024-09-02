@@ -4,7 +4,7 @@ namespace App\Logging\Processors;
 
 use Illuminate\Support\Facades\Auth;
 
-class ContextUserProcessor 
+class ContextUserProcessor
 {
     public function __invoke()
     {

@@ -34,4 +34,3 @@ if (!function_exists('getAuthor')) {
         return env('APP_AUTHOR', trim(shell_exec('git config user.name')));
     }
 }
-

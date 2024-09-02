@@ -2,7 +2,6 @@
 
 namespace App\Logging;
 
-use App\Logging\Processors;
 use Illuminate\Support\Facades\File;
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
@@ -34,7 +33,7 @@ class CustomLogChannel
         if (!File::exists($baseDir)) {
             File::makeDirectory($baseDir, 0777, true);
         }
-        
+
         return $baseDir . '/' . date('Y-m-d') . '.log';
     }
 

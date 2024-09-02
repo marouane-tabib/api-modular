@@ -55,7 +55,7 @@ class User extends Authenticatable implements ContractsAuditable, JWTSubject
             'password' => 'hashed',
         ];
     }
-    
+
     public function getJWTIdentifier()
     {
         return $this->getKey();
@@ -64,8 +64,8 @@ class User extends Authenticatable implements ContractsAuditable, JWTSubject
     public function getJWTCustomClaims()
     {
         return [
-            'email'=>$this->email,
-            'name'=>$this->name
+            'email' => $this->email,
+            'name' => $this->name
         ];
     }
 }

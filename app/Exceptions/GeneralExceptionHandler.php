@@ -42,10 +42,10 @@ class GeneralExceptionHandler
             } elseif ($exception instanceof Error) {
                 $throwableType = 'error';
             }
-            
+
             isset($throwableType) ?? $report->setSeverity($throwableType);
             $report->setMetaData(CustomLogChannel::processors());
-            $report->setMetaData([  
+            $report->setMetaData([
                 'timestamp' => gmdate('c'),
                 'severity_level' => $throwableType,
                 'exception' =>  $this->exceptionProcessor($exception)
@@ -54,10 +54,10 @@ class GeneralExceptionHandler
     }
 
     public function render(Throwable $throwable, Request $request)
-    {   
+    {
         if ($request->wantsJson()) {
             return responder()->error(message: "An unexpected error occurred. Please try again later.")->data([
-                "exception" => config('app.rest_debug')? $this->exceptionProcessor($throwable): true,
+                "exception" => config('app.rest_debug') ? $this->exceptionProcessor($throwable) : true,
             ])->respond();
         }
     }

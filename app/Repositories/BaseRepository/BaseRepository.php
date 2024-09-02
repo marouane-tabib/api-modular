@@ -91,7 +91,7 @@ class BaseRepository implements Repository
 
         return $this;
     }
-    
+
     public function search(string $search): self
     {
         $this->model = $this->model->search($search);

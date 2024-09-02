@@ -2,7 +2,7 @@
 
 namespace App\Logging\Processors;
 
-class ContextVersionProcessor 
+class ContextVersionProcessor
 {
     public function __invoke()
     {

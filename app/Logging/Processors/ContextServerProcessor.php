@@ -2,7 +2,7 @@
 
 namespace App\Logging\Processors;
 
-class ContextServerProcessor 
+class ContextServerProcessor
 {
     public function __invoke()
     {

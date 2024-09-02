@@ -17,7 +17,7 @@ class AuthService
         // TODO: Change the path to modules,
         $this->auth = Auth::guard(config('auth.defaults.guard', 'api'));
     }
-    
+
     public function register(array $credentials)
     {
         $user = User::create([
@@ -36,9 +36,9 @@ class AuthService
         $token = $this->auth->attempt($credentials);
 
         if (!$token) {
-            throw new UnauthorizedException("Unauthorized"); 
+            throw new UnauthorizedException("Unauthorized");
         }
-        
+
         return $this->authInformation($token);
     }
 
