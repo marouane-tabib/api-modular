@@ -19,6 +19,7 @@
         "owen-it/laravel-auditing": "^13.6",
         "predis/predis": "^2.2",
         "rappasoft/laravel-authentication-log": "^4.0",
+        "spatie/laravel-backup": "^9.0",
         "spatie/laravel-http-logger": "dev-main",
         "spatie/laravel-permission": "^6.9",
         "symfony/cache": "*",
