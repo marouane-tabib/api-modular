@@ -2,17 +2,16 @@
 
 namespace App\Repositories\BaseRepository;
 
-use App\Models\User;
+use App\Models\Model;
 use App\Repositories\BaseRepository\Interfaces\Repository;
 use Illuminate\Contracts\Pagination\Paginator;
 use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Database\Eloquent\Model;
 
 class BaseRepository implements Repository
 {
     protected $model;
 
-    public function __construct(User $model)
+    public function __construct(Model $model)
     {
         $this->model = $model;
     }
