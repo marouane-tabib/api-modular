@@ -3,9 +3,9 @@
 namespace App\Http\Requests\Api;
 
 use App\Http\Requests\Api\Concerns\HasFailedValidationResponse;
-use App\Http\Requests\Request as RequestsRequest;
+use App\Http\Requests\Request as BaseRequest;
 
-class Request extends RequestsRequest
+class Request extends BaseRequest
 {
     use HasFailedValidationResponse;
 }
