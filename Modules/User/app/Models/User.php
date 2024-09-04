@@ -3,11 +3,8 @@
 namespace Modules\User\Models;
 
 use App\Models\Authenticatable;
-use App\Models\Concerns\HasSearch;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Notifications\Notifiable;
 use Modules\User\Database\Factories\UserFactory;
-use OwenIt\Auditing\Auditable;
 use OwenIt\Auditing\Contracts\Auditable as ContractsAuditable;
 use Rappasoft\LaravelAuthenticationLog\Traits\AuthenticationLoggable;
 use Spatie\Permission\Traits\HasRoles;
@@ -15,10 +12,8 @@ use Tymon\JWTAuth\Contracts\JWTSubject;
 
 class User extends Authenticatable implements ContractsAuditable, JWTSubject
 {
-    use Auditable, AuthenticationLoggable;
-    use HasFactory;
+    use AuthenticationLoggable;
     use Notifiable;
-    use HasSearch;
     use HasRoles;
 
     /**
@@ -59,7 +54,7 @@ class User extends Authenticatable implements ContractsAuditable, JWTSubject
     
     protected static function newFactory(): UserFactory
     {
-        return new UserFactory();
+        return new UserFactorY();
     }
 
     public function getJWTIdentifier()
