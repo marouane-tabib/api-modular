@@ -54,7 +54,7 @@ class User extends Authenticatable implements ContractsAuditable, JWTSubject
     
     protected static function newFactory(): UserFactory
     {
-        return new UserFactorY();
+        return new UserFactory();
     }
 
     public function getJWTIdentifier()
