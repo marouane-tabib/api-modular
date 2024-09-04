@@ -1,12 +1,7 @@
 {
     "name": "nwidart/user",
     "description": "",
-    "authors": [
-        {
-            "name": "Nicolas Widart",
-            "email": "n.widart@gmail.com"
-        }
-    ],
+    "authors": [],
     "extra": {
         "laravel": {
             "providers": [],
