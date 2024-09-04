@@ -20,9 +20,9 @@ class Controller extends BaseController
         $this->responder = $responder;
     }
 
-    public function index(ApiRequest $request): ResponseBuilder
+    public function index(): ResponseBuilder
     {
-        return $this->responder->success($this->service->index($request->validated()));
+        return $this->responder->success($this->service->index($this->request->validated()));
     }
 
     public function show($id): ResponseBuilder
@@ -30,14 +30,14 @@ class Controller extends BaseController
         return $this->responder->success($this->service->show($id));
     }
 
-    public function store(ApiRequest $request): ResponseBuilder
+    public function store(): ResponseBuilder
     {
-        return $this->responder->success($this->service->store($request->validated()));
+        return $this->responder->success($this->service->store($this->request->validated()));
     }
 
-    public function update(ApiRequest $request, $id): ResponseBuilder
+    public function update($id): ResponseBuilder
     {
-        return $this->responder->success($this->service->update($id, $request->validated()));
+        return $this->responder->success($this->service->update($id, $this->request->validated()));
     }
 
     public function destroy($id): ResponseBuilder
