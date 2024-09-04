@@ -1,10 +1,7 @@
 <?php
 
-use App\Http\Controllers\Api\Controller;
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
-
-Route::apiResource('/users', Controller::class)->middleware('throttle:user_throttle');
 
 Route::post('login', [AuthController::class, 'login']);
 Route::post('register', [AuthController::class, 'register']);
