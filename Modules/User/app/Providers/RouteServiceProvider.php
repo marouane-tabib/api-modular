@@ -32,7 +32,8 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected function mapApiRoutes(): void
     {
-        Route::middleware(['api', 'auth:api', 'user_throttle'])
+        Route::middleware('user_throttle')
+               ->middleware(['api', 'auth:api'])
                ->prefix('api/v1')
                ->name('api.v1.')
                ->group(module_path('User', '/routes/api_v1.php'));
