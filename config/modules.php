@@ -28,8 +28,8 @@ return [
         'path' => base_path('stubs/nwidart-stubs'),
         'files' => [
             // 'routes/web' => 'routes/web.php',
-            'routes/api' => 'routes/api.php',
-            'request' => 'app/Http/Requests/request.php',
+            'routes/api' => 'routes/api_v1.php',
+            // 'request' => 'app/Http/Requests/request.php',
             // 'views/index' => 'resources/views/index.blade.php',
             // 'views/master' => 'resources/views/layouts/master.blade.php',
             'scaffold/config' => 'config/config.php',
@@ -37,7 +37,7 @@ return [
             // 'assets/js/app' => 'resources/assets/js/app.js',
             // 'assets/sass/app' => 'resources/assets/sass/app.scss',
             // 'vite' => 'vite.config.js',
-            'package' => 'package.json',
+            // 'package' => 'package.json',
         ],
         'replacements' => [
             // 'routes/web' => ['LOWER_NAME', 'STUDLY_NAME', 'MODULE_NAMESPACE', 'CONTROLLER_NAMESPACE'],
@@ -227,7 +227,7 @@ return [
     */
     'cache' => [
         'enabled' => env('MODULES_CACHE_ENABLED', false),
-        'driver' => env('MODULES_CACHE_DRIVER', 'file'),
+        'driver' => env('MODULES_CACHE_DRIVER', 'redis'),
         'key' => env('MODULES_CACHE_KEY', 'laravel-modules'),
         'lifetime' => env('MODULES_CACHE_LIFETIME', 60),
     ],
