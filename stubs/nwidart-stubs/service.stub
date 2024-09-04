@@ -2,10 +2,15 @@
 
 namespace $CLASS_NAMESPACE$;
 
-class $CLASS$
+use App\Services\BaseService\BaseService;
+use Modules\$STUDLY_NAME$\Repositories\$STUDLY_NAME$Repository;
+
+class $CLASS$ extends BaseService
 {
-    public function handle()
+    protected $repository;
+
+    public function __construct($STUDLY_NAME$Repository $repository)
     {
-        //
+        $this->repository = $repository;
     }
 }

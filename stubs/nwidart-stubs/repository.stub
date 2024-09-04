@@ -2,10 +2,15 @@
 
 namespace $CLASS_NAMESPACE$;
 
-class $CLASS$
+use App\Repositories\BaseRepository\BaseRepository;
+use Modules\$STUDLY_NAME$\Models\$STUDLY_NAME$;
+
+class $CLASS$ extends BaseRepository
 {
-    public function handle()
+    protected $model;
+
+    public function __construct($STUDLY_NAME$ $model)
     {
-        //
+        $this->model = $model;
     }
 }
