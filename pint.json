@@ -1,3 +1,7 @@
 {
-  "preset": "psr12"
+  "preset": "psr12",
+  
+  "notName": [
+    "*Controller.php"
+  ]
 }
