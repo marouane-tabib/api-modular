@@ -37,6 +37,7 @@ class AppServiceProvider extends ServiceProvider
             return [
                 Limit::perSecond(1)->by(Auth::user()?->id),
                 Limit::perMinute(30)->by($request->ip()),
+                Limit::perDay(10000)->by($request->ip()),
             ];
         });
     }
