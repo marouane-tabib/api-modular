@@ -20,6 +20,7 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware) {
         $middleware->api(prepend: [
+            'user_throttle',
             ForceJsonResponse::class,
             HttpLogger::class,
             ForceSSL::class
