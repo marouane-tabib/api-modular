@@ -37,11 +37,15 @@ class Controller extends BaseController
 
     public function update($id): ResponseBuilder
     {
-        return $this->responder->success($this->service->update($id, $this->request->validated()));
+        $this->service->update($id, $this->request->validated());
+
+        return $this->responder->success();
     }
 
     public function destroy($id): ResponseBuilder
     {
-        return $this->responder->success($this->service->destroy($id));
+        $this->service->destroy($id);
+        
+        return $this->responder->success();
     }
 }
