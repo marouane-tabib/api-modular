@@ -19,4 +19,3 @@ class AuthFactory extends Factory
         return [];
     }
 }
-

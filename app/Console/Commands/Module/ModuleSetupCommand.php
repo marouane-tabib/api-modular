@@ -30,7 +30,7 @@ class ModuleSetupCommand extends Command
     {
         $names = $this->argument('name');
 
-        foreach ($names as $name)  {
+        foreach ($names as $name) {
 
             Artisan::call('module:make', ['name' => [$name]]);
             Artisan::call('module:make-repository', ['name' => $name."Repository", 'module' => $name]);
@@ -39,9 +39,9 @@ class ModuleSetupCommand extends Command
             Artisan::call('module:make-factory', ['name' => $name, 'module' => $name]);
             Artisan::call('module:make-migration', ['name' => "create_".Str::plural(strtolower($name))."_table", 'module' => $name]);
             Artisan::call('module:make-request', ['name' => $name."Request", 'module' => $name]);
-            
+
             $this->line(Artisan::output());
         }
-        
+
     }
 }

@@ -51,7 +51,7 @@ class User extends Authenticatable implements ContractsAuditable, JWTSubject
             'password' => 'hashed',
         ];
     }
-    
+
     protected static function newFactory(): UserFactory
     {
         return new UserFactory();

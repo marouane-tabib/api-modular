@@ -19,8 +19,7 @@ class UserService extends BaseService
     public function register(array $credentials): Authenticatable
     {
         $credentials['password'] = Hash::make($credentials['password']);
-        
+
         return $this->store($credentials);
     }
 }
-

@@ -17,7 +17,7 @@ class ServiceMakeCommand extends MakeServiceMakeCommand
             'CLASS' => $this->getClassNameWithoutNamespace(),
         ]))->render();
     }
-    
+
     private function getClassNameWithoutNamespace(): array|string
     {
         return class_basename($this->getServiceName());

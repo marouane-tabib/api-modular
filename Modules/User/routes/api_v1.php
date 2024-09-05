@@ -15,4 +15,3 @@ use Modules\User\Http\Controllers\UserController;
 */
 
 Route::apiResource('users', UserController::class)->names('user');
-    
