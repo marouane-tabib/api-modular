@@ -38,7 +38,8 @@ class ModuleSetupCommand extends Command
             Artisan::call('module:make-model', ['model' => $name, 'module' => $name]);
             Artisan::call('module:make-factory', ['name' => $name, 'module' => $name]);
             Artisan::call('module:make-migration', ['name' => "create_".Str::plural(strtolower($name))."_table", 'module' => $name]);
-            Artisan::call('module:make-request', ['name' => $name."Request", 'module' => $name]);
+            Artisan::call('module:make-request', ['name' => $name."StoreRequest", 'module' => $name]);
+            Artisan::call('module:make-request', ['name' => $name."UpdateRequest", 'module' => $name]);
 
             $this->line(Artisan::output());
         }
