@@ -2,9 +2,9 @@
 
 namespace Modules\Auth\Http\Requests;
 
-use App\Http\Requests\Api\Request as ApiRequest;
+use App\Http\Requests\Request;
 
-class LoginRequest extends ApiRequest
+class LoginRequest extends Request
 {
     /**
      * Get the validation rules that apply to the request.
