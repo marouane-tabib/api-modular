@@ -2,9 +2,9 @@
 
 namespace Modules\User\Http\Requests;
 
-use App\Http\Requests\Api\Request as ApiRequest;
+use App\Http\Requests\Request;
 
-class UserRequest extends ApiRequest
+class UserUpdateRequest extends Request
 {
     /**
      * Get the validation rules that apply to the request.
