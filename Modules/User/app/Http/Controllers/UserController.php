@@ -2,20 +2,51 @@
 
 namespace Modules\User\Http\Controllers;
 
-use App\Http\Controllers\Api\Controller as ApiController;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\Api\FilterRequest;
 use Flugg\Responder\Responder;
-use Modules\User\Http\Requests\UserRequest;
+use Flugg\Responder\Http\Responses\ResponseBuilder;
+use Modules\User\Http\Requests\UserStoreRequest;
+use Modules\User\Http\Requests\UserUpdateRequest;
 use Modules\User\Services\UserService;
 
-class UserController extends ApiController
+class UserController extends Controller
 {
-    protected $service, $request, $responder;
+    protected $service, $responder;
 
     public function __construct(
-        UserService $service, UserRequest $request, Responder $responder
+        UserService $service, Responder $responder
     ) {
         $this->service = $service;
-        $this->request = $request;
         $this->responder = $responder;
+    }
+    
+    public function index(FilterRequest $request): ResponseBuilder
+    {
+        return $this->responder->success($this->service->index($request->validated()));
+    }
+
+    public function show($id): ResponseBuilder
+    {
+        return $this->responder->success($this->service->show($id));
+    }
+
+    public function store(UserStoreRequest $request): ResponseBuilder
+    {
+        return $this->responder->success($this->service->store($request->validated()));
+    }
+
+    public function update(UserUpdateRequest $request, $id): ResponseBuilder
+    {
+        $this->service->update($id, $request->validated());
+
+        return $this->responder->success();
+    }
+
+    public function destroy($id): ResponseBuilder
+    {
+        $this->service->destroy($id);
+        
+        return $this->responder->success();
     }
 }
