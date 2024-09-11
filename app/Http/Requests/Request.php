@@ -2,13 +2,12 @@
 
 namespace App\Http\Requests;
 
-use App\Http\Requests\Concerns\HasFailedValidationResponseMessages;
+use App\Http\Requests\Api\Concerns\HasFailedValidationResponse;
 use Illuminate\Foundation\Http\FormRequest;
 
 class Request extends FormRequest
 {
-    use HasFailedValidationResponseMessages;
-
+    use HasFailedValidationResponse;
     /**
      * Determine if the user is authorized to make this request.
      */
