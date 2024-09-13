@@ -6,7 +6,7 @@ trait HasSearch
 {
     protected $search = [];
 
-    public function scopeSearch($value = "")
+    public function search($value = "")
     {
         if (!empty($this->search) && is_array($this->search)) {
             if (!empty($this->search['columns']) && is_array($this->search['columns'])) {
