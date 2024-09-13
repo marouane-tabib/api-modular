@@ -20,3 +20,4 @@ yarn-error.log
 /.vscode
 /public/docs
 .scribe
+.php-cs-fixer.cache
