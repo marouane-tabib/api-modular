@@ -2,8 +2,15 @@
 
 namespace $CLASS_NAMESPACE$;
 
+use Modules\$STUDLY_NAME$\Repositories\$STUDLY_NAME$Repository;
+
 class $CLASS$
 {
+    public function __construct(
+        protected $STUDLY_NAME$Repository $repository
+    ) {
+    }
+
     public function __invoke()
     {
         //
