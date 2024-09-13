@@ -4,6 +4,7 @@ namespace Modules\User\Providers;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
+use Spatie\HttpLogger\Middlewares\HttpLogger;
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -32,7 +33,7 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected function mapApiRoutes(): void
     {
-        Route::middleware('auth:api')
+        Route::middleware(['auth:api', 'throttle:user_throttle'])
                ->prefix('api/v1')
                ->name('api.v1.')
                ->group(module_path('User', '/routes/api_v1.php'));
