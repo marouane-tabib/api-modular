@@ -10,6 +10,21 @@ use Modules\User\Http\Requests\UserStoreRequest;
 use Modules\User\Http\Requests\UserUpdateRequest;
 use Modules\User\Services\UserService;
 
+/**
+ * @group User Process
+ *
+ * Handles operations related to User resources.
+ *
+ * ### Endpoints
+ *
+ * - **GET /User** - Retrieves a list of all Users.
+ * - **GET /User/{id}** - Retrieves the details of a specific User.
+ * - **POST /User** - Creates a new User with the provided data.
+ * - **PUT /User/{id}** - Updates the details of an existing User.
+ * - **DELETE /User/{id}** - Deletes the specified User from the system.
+ *
+ * All operations return standardized responses according to the API specification.
+ */
 class UserController extends Controller
 {
     protected $service, $responder;
