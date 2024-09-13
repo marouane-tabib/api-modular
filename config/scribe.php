@@ -4,10 +4,10 @@ use Knuckles\Scribe\Extracting\Strategies;
 
 return [
     // The HTML <title> for the generated documentation. If this is empty, Scribe will infer it from config('app.name').
-    'title' => "Modular Structure Api Documentation",
+    'title' => config('app.name', 'Laravel')." Documentation",
 
     // A short description of your API. Will be included in the docs webpage, Postman collection and OpenAPI spec.
-    'description' => '',
+    'description' => "This documentation provides all the necessary information to use our API.",
 
     // The base URL displayed in the docs. If this is empty, Scribe will use the value of config('app.url') at generation time.
     // If you're using `laravel` type, you can set this to a dynamic string, like '{{ config("app.tenant_url") }}' to get a dynamic base URL.
@@ -123,11 +123,10 @@ return [
 
     // Text to place in the "Introduction" section, right after the `description`. Markdown and HTML are supported.
     'intro_text' => <<<INTRO
-This documentation aims to provide all the information you need to work with our API.
+    This documentation provides all the necessary information to use our API.
 
-<aside>As you scroll, you'll see code examples for working with the API in different programming languages in the dark area to the right (or as part of the content on mobile).
-You can switch the language used with the tabs at the top right (or from the nav menu at the top left on mobile).</aside>
-INTRO
+    <aside>Code examples in various programming languages are displayed on the right (or within the content on mobile). You can switch languages using the tabs at the top right (or the menu on the top left for mobile).</aside>
+    INTRO
     ,
 
     // Example requests for each endpoint will be shown in each of these languages.
@@ -146,7 +145,7 @@ INTRO
         'enabled' => true,
 
         'overrides' => [
-            // 'info.version' => '2.0.0',
+            'info.version' => env('APP_RELEASE_VERSION'),
         ],
     ],
 
