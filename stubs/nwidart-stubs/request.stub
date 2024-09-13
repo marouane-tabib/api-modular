@@ -2,9 +2,9 @@
 
 namespace $NAMESPACE$;
 
-use App\Http\Requests\Api\Request as ApiRequest;
+use App\Http\Requests\Request;
 
-class $CLASS$ extends ApiRequest
+class $CLASS$ extends Request
 {
     /**
      * Get the validation rules that apply to the request.
