@@ -16,6 +16,10 @@ class User extends Authenticatable implements ContractsAuditable, JWTSubject
     use Notifiable;
     use HasRoles;
 
+    protected $search = [
+        'columns' => ['id', 'name', 'email']
+    ];
+
     /**
      * The attributes that are mass assignable.
      *
