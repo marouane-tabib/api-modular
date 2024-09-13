@@ -13,7 +13,7 @@ class LoginRequest extends Request
     {
         return [
             'email' => 'required|email|min:5|max:100|exists:users,email',
-            'password' => 'required|string|min:8|max:100|confirmed',
+            'password' => 'required|string|min:8|max:100',
         ];
     }
 
