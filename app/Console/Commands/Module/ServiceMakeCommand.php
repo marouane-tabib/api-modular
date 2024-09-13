@@ -23,7 +23,7 @@ class ServiceMakeCommand extends MakeServiceMakeCommand
     {
         return class_basename($this->getServiceName());
     }
-    
+
     public function getDestinationFilePath(): string
     {
         $path = $this->laravel['modules']->getModulePath($this->getModuleName());
