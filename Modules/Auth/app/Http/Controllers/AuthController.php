@@ -8,6 +8,21 @@ use Modules\Auth\Http\Requests\LoginRequest;
 use Modules\Auth\Http\Requests\RegisterRequest;
 use Modules\Auth\Services\AuthService;
 
+
+/**
+ * @group Authentication
+ *
+ * Handles authentication-related operations.
+ *
+ * ### Endpoints
+ *
+ * - **POST /auth/register** - Registers a new user.
+ * - **POST /auth/login** - Authenticates a user and returns a token.
+ * - **POST /auth/logout** - Logs out the authenticated user.
+ * - **POST /auth/refresh** - Refreshes the authentication token.
+ *
+ * All endpoints return standardized responses following the API specification.
+ */
 class AuthController extends Controller
 {
     public function __construct(
