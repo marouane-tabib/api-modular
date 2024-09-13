@@ -10,6 +10,21 @@ use Modules\$STUDLY_NAME$\Http\Requests\$STUDLY_NAME$StoreRequest;
 use Modules\$STUDLY_NAME$\Http\Requests\$STUDLY_NAME$UpdateRequest;
 use Modules\$STUDLY_NAME$\Services\$STUDLY_NAME$Service;
 
+/**
+ * @group $STUDLY_NAME$ Process
+ *
+ * Handles operations related to $STUDLY_NAME$ resources.
+ *
+ * ### Endpoints
+ *
+ * - **GET /$STUDLY_NAME$** - Retrieves a list of all $STUDLY_NAME$s.
+ * - **GET /$STUDLY_NAME$/{id}** - Retrieves the details of a specific $STUDLY_NAME$.
+ * - **POST /$STUDLY_NAME$** - Creates a new $STUDLY_NAME$ with the provided data.
+ * - **PUT /$STUDLY_NAME$/{id}** - Updates the details of an existing $STUDLY_NAME$.
+ * - **DELETE /$STUDLY_NAME$/{id}** - Deletes the specified $STUDLY_NAME$ from the system.
+ *
+ * All operations return standardized responses according to the API specification.
+ */
 class $CLASS$ extends Controller
 {
     protected $service, $responder;
