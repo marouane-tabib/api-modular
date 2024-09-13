@@ -12,9 +12,9 @@ class RepositoryMakeCommand extends MakeRepositoryMakeCommand
         $module = $this->laravel['modules']->findOrFail($this->getModuleName());
 
         return (new Stub($this->getStubName(), [
-            'STUDLY_NAME' => $module->getStudlyName(),
+            'STUDLY_NAME'     => $module->getStudlyName(),
             'CLASS_NAMESPACE' => $this->getClassNamespace($module),
-            'CLASS' => $this->getClassNameWithoutNamespace(),
+            'CLASS'           => $this->getClassNameWithoutNamespace(),
         ]))->render();
     }
 

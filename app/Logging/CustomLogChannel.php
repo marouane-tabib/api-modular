@@ -3,9 +3,9 @@
 namespace App\Logging;
 
 use Illuminate\Support\Facades\File;
-use Monolog\Logger;
-use Monolog\Handler\StreamHandler;
 use Monolog\Formatter\JsonFormatter;
+use Monolog\Handler\StreamHandler;
+use Monolog\Logger;
 use Psr\Log\LogLevel;
 
 class CustomLogChannel
@@ -63,9 +63,9 @@ class CustomLogChannel
     {
         return [
             'timestamp' => gmdate('c'),
-            'request' => (new Processors\ContextRequestProcessor())(),
-            'server' => (new Processors\ContextServerProcessor())(),
-            'user' => (new Processors\ContextUserProcessor())(),
+            'request'   => (new Processors\ContextRequestProcessor())(),
+            'server'    => (new Processors\ContextServerProcessor())(),
+            'user'      => (new Processors\ContextUserProcessor())(),
             'meta_data' => (new Processors\ContextVersionProcessor())()
         ];
     }

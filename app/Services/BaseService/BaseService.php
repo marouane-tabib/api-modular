@@ -4,9 +4,9 @@ namespace App\Services\BaseService;
 
 use App\Repositories\BaseRepository\Interfaces\Repository;
 use App\Services\BaseService\Interfaces\Service;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Contracts\Pagination\Paginator;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Database\Eloquent\Model;
 
 class BaseService implements Service
 {

@@ -52,7 +52,7 @@ class User extends Authenticatable implements ContractsAuditable, JWTSubject
     {
         return [
             'email_verified_at' => 'datetime',
-            'password' => 'hashed',
+            'password'          => 'hashed',
         ];
     }
 
@@ -70,7 +70,7 @@ class User extends Authenticatable implements ContractsAuditable, JWTSubject
     {
         return [
             'email' => $this->email,
-            'name' => $this->name
+            'name'  => $this->name
         ];
     }
 }

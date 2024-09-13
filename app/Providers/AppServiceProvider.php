@@ -6,11 +6,11 @@ use App\Repositories\BaseRepository\BaseRepository;
 use App\Repositories\BaseRepository\Interfaces\Repository;
 use App\Services\BaseService\BaseService;
 use App\Services\BaseService\Interfaces\Service;
-use Illuminate\Support\ServiceProvider;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\RateLimiter;
+use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {

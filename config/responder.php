@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Serializer Class Paths
@@ -15,7 +14,7 @@ return [
 
     'serializers' => [
         'success' => Flugg\Responder\Serializers\SuccessSerializer::class,
-        'error' => \Flugg\Responder\Serializers\ErrorSerializer::class,
+        'error'   => \Flugg\Responder\Serializers\ErrorSerializer::class,
     ],
 
     /*
@@ -110,5 +109,4 @@ return [
     */
 
     'use_camel_case_relations' => true,
-
 ];

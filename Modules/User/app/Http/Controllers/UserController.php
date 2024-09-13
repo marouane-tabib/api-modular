@@ -4,8 +4,8 @@ namespace Modules\User\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Api\FilterRequest;
-use Flugg\Responder\Responder;
 use Flugg\Responder\Http\Responses\ResponseBuilder;
+use Flugg\Responder\Responder;
 use Modules\User\Http\Requests\UserStoreRequest;
 use Modules\User\Http\Requests\UserUpdateRequest;
 use Modules\User\Services\UserService;
@@ -27,10 +27,12 @@ use Modules\User\Services\UserService;
  */
 class UserController extends Controller
 {
-    protected $service, $responder;
+    protected $service;
+    protected $responder;
 
     public function __construct(
-        UserService $service, Responder $responder
+        UserService $service,
+        Responder $responder
     ) {
         $this->service = $service;
         $this->responder = $responder;

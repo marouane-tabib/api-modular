@@ -8,7 +8,6 @@ use Modules\Auth\Http\Requests\LoginRequest;
 use Modules\Auth\Http\Requests\RegisterRequest;
 use Modules\Auth\Services\AuthService;
 
-
 /**
  * @group Authentication
  *
@@ -51,4 +50,3 @@ class AuthController extends Controller
         return $this->responder->success($this->authService->refresh());
     }
 }
-

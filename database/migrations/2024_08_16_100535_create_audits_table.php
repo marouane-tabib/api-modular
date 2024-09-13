@@ -9,7 +9,6 @@ class CreateAuditsTable extends Migration
     /**
      * Run the migrations.
      *
-     * @return void
      */
     public function up()
     {
@@ -17,7 +16,6 @@ class CreateAuditsTable extends Migration
         $table = config('audit.drivers.database.table', 'audits');
 
         Schema::connection($connection)->create($table, function (Blueprint $table) {
-
             $morphPrefix = config('audit.user.morph_prefix', 'user');
 
             $table->bigIncrements('id');
@@ -40,7 +38,6 @@ class CreateAuditsTable extends Migration
     /**
      * Reverse the migrations.
      *
-     * @return void
      */
     public function down()
     {

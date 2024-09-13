@@ -12,10 +12,10 @@ trait HasFailedValidationResponse
         throw new HttpResponseException(
             response()->json(
                 [
-                    "status" => 422,
-                    "success" => false,
-                    "message" => "Validation errors",
-                    "errors"  => $validator->errors(),
+                    'status'  => 422,
+                    'success' => false,
+                    'message' => 'Validation errors',
+                    'errors'  => $validator->errors(),
                 ],
                 422
             )

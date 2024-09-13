@@ -6,7 +6,7 @@ trait HasSearch
 {
     protected $search = [];
 
-    public function search($value = "")
+    public function search($value = '')
     {
         if (!empty($this->search) && is_array($this->search)) {
             if (!empty($this->search['columns']) && is_array($this->search['columns'])) {
@@ -15,12 +15,12 @@ trait HasSearch
                         if (!empty($column)) {
                             $q->orWhere($column, 'like', "%$value%");
                         } else {
-                            throw new \Exception("You must add searchable column for the query");
+                            throw new \Exception('You must add searchable column for the query');
                         }
                     }
                 });
             } else {
-                throw new \Exception("You must specify searchable columns for the query");
+                throw new \Exception('You must specify searchable columns for the query');
             }
         } else {
             return $this;

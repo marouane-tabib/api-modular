@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Base URL
@@ -35,7 +34,7 @@ return [
     |
     */
 
-    'structured' => false,
+    'structured'   => false,
     'crud_folders' => true,
 
     /*
@@ -62,11 +61,11 @@ return [
 
     'headers' => [
         [
-            'key' => 'Accept',
+            'key'   => 'Accept',
             'value' => 'application/json',
         ],
         [
-            'key' => 'Content-Type',
+            'key'   => 'Content-Type',
             'value' => 'application/json',
         ],
     ],
@@ -82,7 +81,7 @@ return [
     */
 
     'prerequest_script' => '', // This script will execute before every request in the collection.
-    'test_script' => '', // This script will execute after every request in the collection.
+    'test_script'       => '', // This script will execute after every request in the collection.
 
     /*
     |--------------------------------------------------------------------------
@@ -117,7 +116,7 @@ return [
     |
     */
 
-    'print_rules' => true, // @requires: 'enable_formdata' ===  true
+    'print_rules'             => true, // @requires: 'enable_formdata' ===  true
     'rules_to_human_readable' => true, // @requires: 'parse_rules' ===  true
 
     /*
@@ -167,7 +166,7 @@ return [
 
     'authentication' => [
         'method' => env('POSTMAN_EXPORT_AUTH_METHOD'),
-        'token' => env('POSTMAN_EXPORT_AUTH_TOKEN'),
+        'token'  => env('POSTMAN_EXPORT_AUTH_TOKEN'),
     ],
 
     /*
@@ -183,5 +182,4 @@ return [
     'protocol_profile_behavior' => [
         'disable_body_pruning' => false,  // Control request body pruning for following methods: GET, COPY, HEAD, PURGE, UNLOCK
     ],
-
 ];

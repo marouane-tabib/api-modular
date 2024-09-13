@@ -21,8 +21,8 @@ class AuthService
     public function register(array $credentials)
     {
         $user = User::create([
-            'name' => $credentials['name'],
-            'email' => $credentials['email'],
+            'name'     => $credentials['name'],
+            'email'    => $credentials['email'],
             'password' => Hash::make($credentials['password']),
         ]);
 
@@ -36,7 +36,7 @@ class AuthService
         $token = $this->auth->attempt($credentials);
 
         if (!$token) {
-            throw new UnauthorizedException("Unauthorized");
+            throw new UnauthorizedException('Unauthorized');
         }
 
         return $this->authInformation($token);
@@ -57,11 +57,11 @@ class AuthService
         $user = $this->auth->user();
 
         return [
-            "token_type" => 'Bearer',
-            "access_token" => $token,
-            "user" => [
-                "name" => $user->name,
-                "email" => $user->email
+            'token_type'   => 'Bearer',
+            'access_token' => $token,
+            'user'         => [
+                'name'  => $user->name,
+                'email' => $user->email
             ]
         ];
     }

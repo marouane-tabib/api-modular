@@ -47,10 +47,10 @@ class FileInfoLogsToChannel extends Command
         }
 
         Artisan::call('logs:file-log-to-channel', [
-            'file_path' => $logFilePath,
-            'channel' => $logChannel,
+            'file_path'      => $logFilePath,
+            'channel'        => $logChannel,
             'severity_level' => $severityLevel,
-            '--message' => $message,
+            '--message'      => $message,
         ]);
 
         $this->info("Logs from $logFilePath have been sent to Elasticsearch successfully.");

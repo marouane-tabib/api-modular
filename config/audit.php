@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     'enabled' => env('AUDITING_ENABLED', true),
 
     /*
