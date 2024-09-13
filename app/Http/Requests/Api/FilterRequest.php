@@ -4,6 +4,14 @@ namespace App\Http\Requests\Api;
 
 use App\Http\Requests\Request;
 
+/**
+ * @group Filtering Operations
+ *
+ * Handles filtering, sorting, and pagination for API requests via query parameters.
+ *
+ * ### Query Parameters
+ * - This request accepts various query parameters: `search`, `column`, `direction`, and `paginate`.
+ */
 class FilterRequest extends Request
 {
     /**
