@@ -58,7 +58,6 @@ class GeneralExceptionHandler
      * Report the exception to Bugsnag.
      *
      * @param Throwable $exception
-     * @return void
      */
     public function reportable(Throwable $exception): void
     {
@@ -67,9 +66,9 @@ class GeneralExceptionHandler
             $report->setSeverity($severity);
             $report->setMetaData(CustomLogChannel::processors());
             $report->setMetaData([
-                'timestamp' => gmdate('c'),
+                'timestamp'      => gmdate('c'),
                 'severity_level' => $severity,
-                'exception' => $this->processException($exception),
+                'exception'      => $this->processException($exception),
             ]);
         });
     }
@@ -77,8 +76,8 @@ class GeneralExceptionHandler
     /**
      * Render the exception response.
      *
-     * @param Throwable $throwable
-     * @param Request $request
+     * @param  Throwable $throwable
+     * @param  Request   $request
      * @return mixed
      */
     public function render(Throwable $throwable, Request $request)
@@ -91,7 +90,7 @@ class GeneralExceptionHandler
     /**
      * Handle JSON exceptions.
      *
-     * @param Throwable $exception
+     * @param  Throwable                     $exception
      * @return \Illuminate\Http\JsonResponse
      */
     protected function handleJsonException(Throwable $exception): \Illuminate\Http\JsonResponse
@@ -140,9 +139,9 @@ class GeneralExceptionHandler
     /**
      * Return a structured error response.
      *
-     * @param int $statusCode
-     * @param string $message
-     * @param array $data
+     * @param  int                           $statusCode
+     * @param  string                        $message
+     * @param  array                         $data
      * @return \Illuminate\Http\JsonResponse
      */
     protected function errorResponse(int $statusCode, string $message, array $data = []): JsonResponse
@@ -153,7 +152,7 @@ class GeneralExceptionHandler
     /**
      * Process the exception for additional context.
      *
-     * @param Throwable $exception
+     * @param  Throwable $exception
      * @return mixed
      */
     protected function processException(Throwable $exception)

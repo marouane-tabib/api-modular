@@ -2,7 +2,6 @@
 
 namespace App\Http\Requests;
 
-use App\Http\Requests\Api\Concerns\HasFailedValidationResponse;
 use Illuminate\Foundation\Http\FormRequest;
 
 class Request extends FormRequest
