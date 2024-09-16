@@ -3,6 +3,7 @@
 use App\Exceptions\GeneralExceptionHandler;
 use App\Http\Middleware\ForceJsonResponse;
 use App\Http\Middleware\ForceSSL;
+use App\Http\Middleware\SecurityHeaders;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
@@ -20,7 +21,8 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->append([
             ForceJsonResponse::class,
             HttpLogger::class,
-            ForceSSL::class
+            ForceSSL::class,
+            SecurityHeaders::class,
         ]);
         $middleware->alias([
             'permission' => PermissionMiddleware::class,
