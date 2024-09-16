@@ -2,7 +2,6 @@
 
 namespace App\Console\Commands\Scribe;
 
-use Illuminate\Console\Command;
 use Knuckles\Scribe\Commands\GenerateDocumentation as CommandsGenerateDocumentation;
 
 class GenerateDocumentation extends CommandsGenerateDocumentation

@@ -45,7 +45,7 @@ class AppServiceProvider extends ServiceProvider
     }
 
     protected function strongPasswordValidator()
-    { 
+    {
         Validator::extend('strong_password', function ($attribute, $value, $parameters, $validator) {
             return preg_match('/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$/', $value);
         });
