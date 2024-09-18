@@ -69,11 +69,6 @@ Ready to get started? Check out the [Installation Guide](#installation) to set i
    git clone https://github.com/marouane-tabib/laravel-modular-structure.git
    cd laravel-modular-structure
 
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/marouane-tabib/laravel-modular-structure.git
-   cd laravel-modular-structure
-
 2. **Install dependencies**:
    ```bash
    composer install
