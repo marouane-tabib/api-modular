@@ -69,13 +69,13 @@ Ready to get started? Check out the [Installation Guide](#installation) to set i
    git clone https://github.com/marouane-tabib/laravel-modular-structure.git
    cd laravel-modular-structure
 
-2. **Install dependencies**:
-   ```bash
-   composer install
-
-3. **Set up environment variables**:
+2. **Set up environment variables**:
    ```bash
    cp .env.example .env
+
+3. **Install dependencies**:
+   ```bash
+   composer install
 
 4. **Generate application key**:
    ```bash
