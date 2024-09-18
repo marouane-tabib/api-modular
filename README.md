@@ -85,7 +85,6 @@ Ready to get started? Check out the [Installation Guide](#installation) to set i
    ```bash
    php artisan migrate --seed
 
-
 8. **Generate API documentation (if command time long, run composer autoload)**:
    ```bash
    php artisan module:setup <modules>
