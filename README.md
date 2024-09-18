@@ -4,6 +4,8 @@
 
 Welcome to the **Laravel Modular API Project**! This project is designed with a robust **modular API architecture**, leveraging [Nwidart Laravel Modules](https://github.com/nWidart/laravel-modules) to promote separation of concerns and enhance **maintainability**. It incorporates strong **security features** and **automated documentation**, making it a powerful solution for your API needs. 📜
 
+Ready to get started? Check out the [Installation Guide](#installation) to set it up! 📜
+
 ---
 
 ## Why Choose This Project? 🤔
@@ -60,7 +62,7 @@ Welcome to the **Laravel Modular API Project**! This project is designed with a 
 
 ---
 
-## Installation 🛠️
+## Installation
 
 1. **Clone the repository**:
    ```bash
