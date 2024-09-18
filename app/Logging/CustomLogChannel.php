@@ -10,7 +10,7 @@ use Psr\Log\LogLevel;
 
 class CustomLogChannel
 {
-    public function __invoke(array $config)
+    public function __invoke()
     {
         $log = new Logger('custom_json');
 
