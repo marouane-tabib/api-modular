@@ -1,66 +1,106 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Laravel Modular API Project 🚀
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Overview
 
-## About Laravel
+Welcome to the **Laravel Modular API Project**! This project is designed with a robust **modular API architecture**, leveraging [Nwidart Laravel Modules](https://github.com/nWidart/laravel-modules) to promote separation of concerns and enhance **maintainability**. It incorporates strong **security features** and **automated documentation**, making it a powerful solution for your API needs. 📜
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- [Why Choose This Project?](#why-choose-this-project-🤔)
+- [Installation](#installation-🛠️)
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Why Choose This Project? 🤔
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- **Scalability**: Easily add or modify features with a modular design that allows for independent updates. 📈
+- **Security**: Robust security measures ensure that your API is protected against common vulnerabilities. 🔒
+- **Comprehensive Documentation**: Automated API documentation keeps your endpoints well-documented and accessible. 📚
+- **Developer-Friendly Tools**: Custom Artisan commands streamline workflows, saving time and reducing errors. ⚙️
+- **Code Quality Assurance**: Tools for maintaining coding standards ensure a clean and readable codebase. ✅
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Key Features 🌟
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### 1. Modular Architecture
+- **Independent Modules**: Each module encapsulates its own functionalities, facilitating easier development, testing, and scalability. 
+- **Automated Module Setup**: Use the command `php artisan module:setup <name-of-module>` to generate a new module with all necessary files, including a complete CRUD structure and routes.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 2. Enhanced Security 
+- **Security Headers**: Custom `SecurityHeaders` middleware adds necessary security headers (e.g., X-Frame-Options, X-XSS-Protection) to all responses.
+- **Strong Password Validation**: Enforces secure passwords during user registration with a custom `strong_password` rule.
+- **Rate Limiting**: Configured rate limits to prevent abuse:
+  - **10,000 requests per day per user**.
+  - Throttling for specific routes using `user_throttle` middleware.
+- **Force SSL**: Ensures secure communication across the entire application.
+- **Auditing Mechanism**: Logs all user actions from commands or requests, capturing context information about each action.
 
-## Laravel Sponsors
+### 3. Authentication and Authorization
+- **JWT Authentication**: Secure token-based authentication for all API routes.
+- **Role-Based Access Control**: Integration with [Spatie Laravel Permission](https://github.com/spatie/laravel-permission) for fine-grained permission management.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### 4. Automated API Documentation
+- **Comprehensive Generation**: Automatically generates detailed API documentation. 
+  - Run `php artisan docs:refresh` to keep documentation in sync with code changes.
 
-### Premium Partners
+### 5. Rate Limiting
+- **Fair API Access**: Prevents abuse and ensures all users have equitable access to resources.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+### 6. Code Quality Tools
+- **PHP-CS-Fixer**: Ensures consistent code style with PSR-12 standards. Run `php artisan fix:style` to maintain coding standards.
+- **Pint**: Additional linting to keep your codebase clean and maintainable.
 
-## Contributing
+### 7. Exception Handling
+- **Uniform Error Management**: Customized error handling provides consistent and meaningful responses to API consumers, including HTTP status codes.
+  - **Debug Mode**: Enable detailed debugging information by setting `APP_REST_DEBUG=true` in your `.env` file. This will display exception information to aid in debugging, making development easier.
+  - **Error Logging**: Integrates with Elasticsearch and Bugsnag for comprehensive error tracking and analysis.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 8. Soft Deletes & Searchable Models
+- **Data Recovery**: Implemented soft deletes ensure records can be recovered for all models in the application.
+- **Efficient Searching**: Trait-based search functionality for quick and efficient record filtering.
 
-## Code of Conduct
+### 9. Scheduled Backups
+- **Data Security**: Automated backups using [Spatie Laravel Backup](https://github.com/spatie/laravel-backup) ensure that data is regularly backed up and can be restored when needed. Daily backups can be configured in `routes/console.php`.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+---
 
-## Security Vulnerabilities
+## Installation 🛠️
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+1. **Clone the repository**:
+   ```bash
+   git clone <repository-url>
+   cd <project-directory>
 
-## License
+1. **Clone the repository**:
+   ```bash
+   git clone <repository-url>
+   cd <project-directory>
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+2. **Install dependencies**:
+   ```bash
+   composer install
+
+3. **Set up environment variables**:
+   ```bash
+   cp .env.example .env
+
+4. **Generate application key**:
+   ```bash
+   php artisan key:generate
+
+5. **Run migrations and seed the database**:
+   ```bash
+   php artisan migrate --seed
+
+
+8. **Generate API documentation (if command time long, run composer autoload)**:
+   ```bash
+   php artisan module:setup <modules>
+
+   example:
+   php artisan module:setup Asset Entity
+
+7. **Generate API documentation**:
+   ```bash
+   php artisan docs:refresh
+
+## Authors
+[@marouane-tabib](https://www.github.com/marouane-tabib)
