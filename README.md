@@ -66,12 +66,12 @@ Ready to get started? Check out the [Installation Guide](#installation) to set i
 
 1. **Clone the repository**:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/marouane-tabib/laravel-modular-structure.git
    cd <project-directory>
 
 1. **Clone the repository**:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/marouane-tabib/laravel-modular-structure.git
    cd <project-directory>
 
 2. **Install dependencies**:
