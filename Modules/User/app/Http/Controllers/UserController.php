@@ -27,15 +27,10 @@ use Modules\User\Services\UserService;
  */
 class UserController extends Controller
 {
-    protected $service;
-    protected $responder;
-
     public function __construct(
-        UserService $service,
-        Responder $responder
+        protected UserService $service,
+        protected Responder $responder
     ) {
-        $this->service = $service;
-        $this->responder = $responder;
     }
     
     public function index(FilterRequest $request): ResponseBuilder
