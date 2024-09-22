@@ -13,7 +13,7 @@ class FixCodeStyleCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'code:style {--path= : The path to run PHP CS Fixer on}';
+    protected $signature = 'code:fix {--path= : The path to run PHP CS Fixer on}';
 
     /**
      * The console command description.
