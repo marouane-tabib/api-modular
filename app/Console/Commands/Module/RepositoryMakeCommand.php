@@ -3,6 +3,7 @@
 namespace App\Console\Commands\Module;
 
 use Nwidart\Modules\Commands\Make\RepositoryMakeCommand as MakeRepositoryMakeCommand;
+use Nwidart\Modules\Support\Config\GenerateConfigReader;
 use Nwidart\Modules\Support\Stub;
 
 class RepositoryMakeCommand extends MakeRepositoryMakeCommand
@@ -16,6 +17,19 @@ class RepositoryMakeCommand extends MakeRepositoryMakeCommand
             'CLASS_NAMESPACE' => $this->getClassNamespace($module),
             'CLASS'           => $this->getClassNameWithoutNamespace(),
         ]))->render();
+    }
+
+    public function getDestinationFilePath(): string
+    {
+        $path = $this->laravel['modules']->getModulePath($this->getModuleName());
+
+        $filePath = GenerateConfigReader::read('repository')->getPath() ?? config('modules.paths.app_folder').'Repositories';
+
+        if ($this->option('invokable') === true) {
+            $filePath .= '/Invokables';
+        }
+
+        return $path.$filePath.'/'.$this->getRepositoryName().'.php';
     }
 
     private function getClassNameWithoutNamespace(): array|string
