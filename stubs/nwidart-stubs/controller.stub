@@ -27,13 +27,11 @@ use Modules\$STUDLY_NAME$\Services\$STUDLY_NAME$Service;
  */
 class $CLASS$ extends Controller
 {
-    protected $service, $responder;
-
     public function __construct(
-        $STUDLY_NAME$Service $service, Responder $responder
+        protected $STUDLY_NAME$Service $service,
+        protected Responder $responder
     ) {
-        $this->service = $service;
-        $this->responder = $responder;
+        
     }
     
     public function index(FilterRequest $request): ResponseBuilder
