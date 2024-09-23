@@ -39,7 +39,7 @@ class ModuleSetupCommand extends Command
             Artisan::call('module:make-request', ['name' => $name.'StoreRequest', 'module' => $name]);
             Artisan::call('module:make-request', ['name' => $name.'UpdateRequest', 'module' => $name]);
 
-            $this->info($name . " Module Created Successfully!");
+            $this->info($name . ' Module Created Successfully!');
         }
     }
 }
