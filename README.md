@@ -1,12 +1,15 @@
-# Laravel Modular API Project 🚀
+# API modular 🚀
 
 ## Overview
 
-Welcome to the **Laravel Modular API Project**! This project is designed with a robust **modular API architecture**, leveraging [Nwidart Laravel Modules](https://github.com/nWidart/laravel-modules) to promote separation of concerns and enhance **maintainability**. It incorporates strong **security features** and **automated documentation**, making it a powerful solution for your API needs. 📜
+Welcome to the **API modular**! This project is designed with a robust **modular API architecture**, leveraging [Nwidart Laravel Modules](https://github.com/nWidart/laravel-modules) to promote **separation of concerns** and enhance **maintainability**. It incorporates strong **security features** and **automated documentation**, making it a powerful solution for your API needs. 📜
 
-Ready to get started? Check out the [Installation Guide](#installation) to set it up! 📜
+Ready to get started? Check out the [Installation Guide](#installation) to set everything up, and don't forget to explore the project [Structure](#structure) for a deeper understanding.
+
+
 
 ---
+
 
 ## Why Choose This Project? 🤔
 
@@ -45,7 +48,7 @@ Ready to get started? Check out the [Installation Guide](#installation) to set i
 - **Fair API Access**: Prevents abuse and ensures all users have equitable access to resources.
 
 ### 6. Code Quality Tools
-- **PHP-CS-Fixer**: Ensures consistent code style with PSR-12 standards. Run `php artisan fix:style` to maintain coding standards.
+- **PHP-CS-Fixer**: Ensures consistent code style with PSR-12 standards. Run `php artisan code:fix` to maintain coding standards.
 - **Pint**: Additional linting to keep your codebase clean and maintainable.
 
 ### 7. Exception Handling
@@ -61,6 +64,45 @@ Ready to get started? Check out the [Installation Guide](#installation) to set i
 - **Data Security**: Automated backups using [Spatie Laravel Backup](https://github.com/spatie/laravel-backup) ensure that data is regularly backed up and can be restored when needed. Daily backups can be configured in `routes/console.php`.
 
 ---
+```Structure
+└── 📁Modules
+    └── 📁User
+        └── 📁app
+        │    └── 📁Http
+        │    │    └── 📁Controllers
+        │    │    │    └── ...
+        │    │    └── 📁Requests
+        │    │        └── ...
+        │    └── 📁Models
+        │    │    └── User.php
+        │    └── 📁Providers
+        │    │    └── ...
+        │    └── 📁Repositories
+        │    │    └── UserRepository.php
+        │    └── 📁Services
+        │    │    └── UserService.php
+        └── 📁config
+        │    └── .gitkeep
+        │    └── config.php
+        └── 📁database
+        │    └── 📁factories
+        │    │    └── ...
+        │    └── 📁migrations
+        │    │    └── ...
+        │    └── 📁seeders
+        │    │    └── ...
+        └── 📁routes
+        │    └── api_v1.php
+        └── 📁tests
+        │    └── 📁Feature
+        │    │    └── .gitkeep
+        │    └── 📁Unit
+        │        └── .gitkeep
+        └── composer.json
+        └── module.json
+```
+---
+
 
 ## Installation
 
@@ -96,5 +138,17 @@ Ready to get started? Check out the [Installation Guide](#installation) to set i
    ```bash
    php artisan docs:refresh
 
-## Authors
-[@marouane-tabib](https://www.github.com/marouane-tabib)
+
+
+---
+
+## Author
+
+Developed and maintained by [@marouane-tabib](https://www.github.com/marouane-tabib) 🚀.
+
+For any feedback, suggestions, or inquiries, feel free to reach out via email at **tabibmarouane6@gmail.com**. I'm always open to contributions and improvements to ensure this project grows with the community’s input. 
+
+Submit issues or pull requests, and let’s make this project better together!
+
+Happy coding! 😎
+
