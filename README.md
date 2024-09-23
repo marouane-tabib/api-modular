@@ -137,9 +137,6 @@ Ready to get started? Check out the [Installation Guide](#installation) to set e
 7. **Generate API documentation**:
    ```bash
    php artisan docs:refresh
-
-
-
 ---
 
 ## Author
