@@ -1,8 +1,8 @@
-# API modular 🚀
+# API Modular 🚀
 
 ## Overview
 
-Welcome to the **API modular**! This project is designed with a robust **modular API architecture**, leveraging [Nwidart Laravel Modules](https://github.com/nWidart/laravel-modules) to promote **separation of concerns** and enhance **maintainability**. It incorporates strong **security features** and **automated documentation**, making it a powerful solution for your API needs. 📜
+Welcome to the **API Modular**! This project is designed with a robust **modular API architecture**, leveraging [Nwidart Laravel Modules](https://github.com/nWidart/laravel-modules) to promote **separation of concerns** and enhance **maintainability**. It incorporates strong **security features** and **automated documentation**, making it a powerful solution for your API needs. 📜
 
 Ready to get started? Check out the [Installation Guide](#installation) to set everything up, and don't forget to explore the project [Structure](#structure) for a deeper understanding.
 
