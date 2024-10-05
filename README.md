@@ -108,8 +108,8 @@ Ready to get started? Check out the [Installation Guide](#installation) to set e
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/marouane-tabib/laravel-modular-structure.git
-   cd laravel-modular-structure
+   git clone https://github.com/marouane-tabib/api-modular
+   cd api-modular
 
 2. **Set up environment variables**:
    ```bash
