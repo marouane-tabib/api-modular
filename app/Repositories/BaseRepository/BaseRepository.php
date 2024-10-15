@@ -4,8 +4,6 @@ namespace App\Repositories\BaseRepository;
 
 use App\Models\Model;
 use App\Repositories\BaseRepository\Interfaces\Repository;
-use Illuminate\Contracts\Pagination\Paginator;
-use Illuminate\Database\Eloquent\Collection;
 
 class BaseRepository implements Repository
 {
@@ -16,32 +14,32 @@ class BaseRepository implements Repository
         $this->model = $model;
     }
 
-    public function get(array $select = ['*']): Collection
+    public function get(array $select = ['*']): mixed
     {
         return $this->model->get($select);
     }
 
-    public function all(array $select = ['*']): Collection
+    public function all(array $select = ['*']): mixed
     {
         return $this->model->all($select);
     }
 
-    public function paginate(int $paginate = 10): Paginator
+    public function paginate(int $paginate = 10): mixed
     {
         return $this->model->paginate($paginate);
     }
 
-    public function find(int $id): ?Model
+    public function find(int $id): mixed
     {
         return $this->model->find($id);
     }
 
-    public function findOrFail(int $id): ?Model
+    public function findOrFail(int $id): mixed
     {
         return $this->model->findOrFail($id);
     }
 
-    public function create(array $data): Model
+    public function create(array $data): mixed
     {
         return $this->model->create($data);
     }
@@ -105,7 +103,7 @@ class BaseRepository implements Repository
         return $this;
     }
 
-    public function first(array $select = ['*']): ?Model
+    public function first(array $select = ['*']): mixed
     {
         return $this->model->first($select);
     }
