@@ -2,23 +2,19 @@
 
 namespace App\Repositories\BaseRepository\Interfaces;
 
-use Illuminate\Contracts\Pagination\Paginator;
-use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Database\Eloquent\Model;
-
 interface Repository
 {
-    public function all(array $select = ['*']): Collection;
+    public function all(array $select = ['*']): mixed;
 
-    public function get(array $select = ['*']): Collection;
+    public function get(array $select = ['*']): mixed;
 
-    public function paginate(int $paginate = 10): Paginator;
+    public function paginate(int $paginate = 10): mixed;
 
-    public function find(int $id): ?Model;
+    public function find(int $id): mixed;
 
-    public function findOrFail(int $id): ?Model;
+    public function findOrFail(int $id): mixed;
 
-    public function create(array $data): Model;
+    public function create(array $data): mixed;
 
     public function attach(string $relation, array $attributes = []): self;
 
@@ -38,5 +34,5 @@ interface Repository
 
     public function order(string $column, string $direction = 'asc'): self;
 
-    public function first(array $select = ['*']): ?Model;
+    public function first(array $select = ['*']): mixed;
 }
