@@ -27,6 +27,12 @@ use Modules\$STUDLY_NAME$\Services\$STUDLY_NAME$Service;
  */
 class $CLASS$ extends Controller
 {
+    /**
+     * Constructor for $CLASS$
+     *
+     * @param $STUDLY_NAME$Service $service The service for handling $STUDLY_NAME$ operations
+     * @param Responder $responder The responder for building API responses
+     */
     public function __construct(
         protected $STUDLY_NAME$Service $service,
         protected Responder $responder
@@ -34,29 +40,60 @@ class $CLASS$ extends Controller
         
     }
     
+    /**
+     * Retrieve a list of $LOWER_NAME$s
+     *
+     * @param FilterRequest $request The request containing filter parameters
+     * @return SuccessResponseBuilder The response containing the list of $LOWER_NAME$s
+     */
     public function index(FilterRequest $request): SuccessResponseBuilder
     {
         return $this->responder->success($this->service->index($request->validated()));
     }
 
-    public function show($id): SuccessResponseBuilder
+    /**
+     * Retrieve a specific $LOWER_NAME$ by ID
+     *
+     * @param int $id The ID of the $LOWER_NAME$ to retrieve
+     * @return SuccessResponseBuilder The response containing the $LOWER_NAME$ details
+     */
+    public function show(int $id): SuccessResponseBuilder
     {
         return $this->responder->success($this->service->show($id));
     }
 
+    /**
+     * Create a new $LOWER_NAME$
+     *
+     * @param $STUDLY_NAME$StoreRequest $request The request containing the $LOWER_NAME$ data
+     * @return SuccessResponseBuilder The response containing the created $LOWER_NAME$
+     */
     public function store($STUDLY_NAME$StoreRequest $request): SuccessResponseBuilder
     {
         return $this->responder->success($this->service->store($request->validated()));
     }
 
-    public function update($STUDLY_NAME$UpdateRequest $request, $id): SuccessResponseBuilder
+    /**
+     * Update an existing $LOWER_NAME$
+     *
+     * @param $STUDLY_NAME$UpdateRequest $request The request containing the updated $LOWER_NAME$ data
+     * @param int $id The ID of the $LOWER_NAME$ to update
+     * @return SuccessResponseBuilder The response indicating successful update
+     */
+    public function update($STUDLY_NAME$UpdateRequest $request, int $id): SuccessResponseBuilder
     {
         $this->service->update($id, $request->validated());
 
         return $this->responder->success();
     }
 
-    public function destroy($id): SuccessResponseBuilder
+    /**
+     * Delete a $LOWER_NAME$
+     *
+     * @param int $id The ID of the $LOWER_NAME$ to delete
+     * @return SuccessResponseBuilder The response indicating successful deletion
+     */
+    public function destroy(int $id): SuccessResponseBuilder
     {
         $this->service->destroy($id);
         

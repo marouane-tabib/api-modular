@@ -5,10 +5,26 @@ namespace $CLASS_NAMESPACE$;
 use App\Services\BaseService\BaseService;
 use Modules\$STUDLY_NAME$\Repositories\$STUDLY_NAME$Repository;
 
+/**
+ * Class $CLASS$
+ *
+ * Service class for handling $STUDLY_NAME$ related operations.
+ *
+ * @package $CLASS_NAMESPACE$
+ * @extends BaseService
+ */
 class $CLASS$ extends BaseService
 {
+    /**
+     * @var $STUDLY_NAME$Repository
+     */
     protected $repository;
 
+    /**
+     * $CLASS$ constructor.
+     *
+     * @param $STUDLY_NAME$Repository $repository The repository instance for $STUDLY_NAME$.
+     */
     public function __construct($STUDLY_NAME$Repository $repository)
     {
         $this->repository = $repository;

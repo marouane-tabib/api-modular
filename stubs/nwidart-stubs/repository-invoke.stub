@@ -4,14 +4,31 @@ namespace $CLASS_NAMESPACE$;
 
 use Modules\$STUDLY_NAME$\Models\$STUDLY_NAME$;
 
+/**
+ * Class $CLASS$
+ *
+ * Repository class for handling $STUDLY_NAME$ related operations.
+ *
+ * @package $CLASS_NAMESPACE$
+ */
 class $CLASS$
 {
+    /**
+     * $CLASS$ constructor.
+     *
+     * @param $STUDLY_NAME$ $model The model instance for $STUDLY_NAME$.
+     */
     public function __construct(
         protected $STUDLY_NAME$ $model
     ) {
 
     }
     
+    /**
+     * Invoke the repository.
+     *
+     * This method is called when the class is used as a function.
+     */
     public function __invoke()
     {
         //

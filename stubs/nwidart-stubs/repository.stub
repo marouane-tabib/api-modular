@@ -5,10 +5,26 @@ namespace $CLASS_NAMESPACE$;
 use App\Repositories\BaseRepository\BaseRepository;
 use Modules\$STUDLY_NAME$\Models\$STUDLY_NAME$;
 
+/**
+ * Class $CLASS$
+ *
+ * Repository class for handling $STUDLY_NAME$ related database operations.
+ *
+ * @package $CLASS_NAMESPACE$
+ * @extends BaseRepository
+ */
 class $CLASS$ extends BaseRepository
 {
+    /**
+     * @var $STUDLY_NAME$
+     */
     protected $model;
 
+    /**
+     * $CLASS$ constructor.
+     *
+     * @param $STUDLY_NAME$ $model The $STUDLY_NAME$ model instance.
+     */
     public function __construct($STUDLY_NAME$ $model)
     {
         $this->model = $model;

@@ -11,10 +11,15 @@ class RepositoryMakeCommand extends MakeRepositoryMakeCommand
     protected function getTemplateContents(): string
     {
         $module = $this->laravel['modules']->findOrFail($this->getModuleName());
+        $classNamespace = $this->getClassNamespace($module);
+        
+        if ($this->option('invokable') === true) {
+            $classNamespace = $this->getClassNamespace($module).'\Invokables';
+        }
 
         return (new Stub($this->getStubName(), [
             'STUDLY_NAME'     => $module->getStudlyName(),
-            'CLASS_NAMESPACE' => $this->getClassNamespace($module),
+            'CLASS_NAMESPACE' => $classNamespace,
             'CLASS'           => $this->getClassNameWithoutNamespace(),
         ]))->render();
     }

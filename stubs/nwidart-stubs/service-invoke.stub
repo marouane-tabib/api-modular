@@ -4,13 +4,30 @@ namespace $CLASS_NAMESPACE$;
 
 use Modules\$STUDLY_NAME$\Repositories\$STUDLY_NAME$Repository;
 
+/**
+ * Class $CLASS$
+ *
+ * Service class for handling $STUDLY_NAME$ related operations.
+ *
+ * @package $CLASS_NAMESPACE$
+ */
 class $CLASS$
 {
+    /**
+     * $CLASS$ constructor.
+     *
+     * @param $STUDLY_NAME$Repository $repository The repository instance for $STUDLY_NAME$.
+     */
     public function __construct(
         protected $STUDLY_NAME$Repository $repository
     ) {
     }
 
+    /**
+     * Invoke the service.
+     *
+     * This method is called when the class is used as a function.
+     */
     public function __invoke()
     {
         //
