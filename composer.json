@@ -50,7 +50,8 @@
         "nunomaduro/collision": "^8.0",
         "pestphp/pest": "^2.0",
         "pestphp/pest-plugin-laravel": "^2.0",
-        "phploc/phploc": "^2.0"
+        "phploc/phploc": "^2.0",
+        "phpmetrics/phpmetrics": "^0.0.1"
     },
     "autoload": {
         "files": [

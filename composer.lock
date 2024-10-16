@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e50a3bc1488bd846960753ac2badd5d8",
+    "content-hash": "e19a52bd61daad7c2f556a7d089578c8",
     "packages": [
         {
             "name": "andreaselia/laravel-api-to-postman",
@@ -10501,6 +10501,48 @@
                 "source": "https://github.com/sebastianbergmann/phploc/tree/2.0.5"
             },
             "time": "2014-04-27T06:47:27+00:00"
+        },
+        {
+            "name": "phpmetrics/phpmetrics",
+            "version": "0.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpmetrics/PhpMetrics.git",
+                "reference": "d46a7d3494ea330e9a93ee0955b88c6efc581100"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpmetrics/PhpMetrics/zipball/d46a7d3494ea330e9a93ee0955b88c6efc581100",
+                "reference": "d46a7d3494ea330e9a93ee0955b88c6efc581100",
+                "shasum": ""
+            },
+            "require": {
+                "phploc/phploc": "~2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "": "./src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jean-François Lépine",
+                    "email": "lepinejeanfrancois@yahoo.fr",
+                    "homepage": "https://www.twitter.com/Halleck45",
+                    "role": "Copyright Holder"
+                }
+            ],
+            "description": "POC of Halstead, Maintenability index for PHP",
+            "support": {
+                "issues": "https://github.com/Halleck45/PhpMetrics/issues",
+                "source": "https://github.com/phpmetrics/PhpMetrics/tree/0.0.1"
+            },
+            "time": "2013-12-18T13:10:25+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
