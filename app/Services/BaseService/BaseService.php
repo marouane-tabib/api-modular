@@ -4,10 +4,6 @@ namespace App\Services\BaseService;
 
 use App\Repositories\BaseRepository\Interfaces\Repository;
 use App\Services\BaseService\Interfaces\Service;
-use Illuminate\Contracts\Pagination\Paginator;
-use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Database\Eloquent\Model;
-
 class BaseService implements Service
 {
     protected $repository;
@@ -17,7 +13,7 @@ class BaseService implements Service
         $this->repository = $repository;
     }
 
-    public function index(array $data): Paginator|Model|null|Collection
+    public function index(array $data): mixed
     {
         return $this->repository
             ->search($data['search'] ?? '')
@@ -25,12 +21,12 @@ class BaseService implements Service
             ->paginate($data['paginate'] ?? 10);
     }
 
-    public function store(array $data): Model
+    public function store(array $data): mixed
     {
         return $this->repository->create($data);
     }
 
-    public function show(int $id): ?Model
+    public function show(int $id): mixed
     {
         return $this->repository->findOrFail($id);
     }
