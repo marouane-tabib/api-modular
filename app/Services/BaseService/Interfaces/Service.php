@@ -1,18 +1,13 @@
 <?php
 
 namespace App\Services\BaseService\Interfaces;
-
-use Illuminate\Contracts\Pagination\Paginator;
-use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Database\Eloquent\Model;
-
 interface Service
 {
-    public function index(array $data): Paginator|Model|null|Collection;
+    public function index(array $data): mixed;
 
-    public function show(int $id): ?Model;
+    public function show(int $id): mixed;
 
-    public function store(array $data): Model;
+    public function store(array $data): mixed;
 
     public function update(int $id, array $data): ?int;
 
