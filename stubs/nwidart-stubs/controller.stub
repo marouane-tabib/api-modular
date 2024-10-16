@@ -5,7 +5,7 @@ namespace $CLASS_NAMESPACE$;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Api\FilterRequest;
 use Flugg\Responder\Responder;
-use Flugg\Responder\Http\Responses\ResponseBuilder;
+use Flugg\Responder\Http\Responses\SuccessResponseBuilder;
 use Modules\$STUDLY_NAME$\Http\Requests\$STUDLY_NAME$StoreRequest;
 use Modules\$STUDLY_NAME$\Http\Requests\$STUDLY_NAME$UpdateRequest;
 use Modules\$STUDLY_NAME$\Services\$STUDLY_NAME$Service;
@@ -17,11 +17,11 @@ use Modules\$STUDLY_NAME$\Services\$STUDLY_NAME$Service;
  *
  * ### Endpoints
  *
- * - **GET /$STUDLY_NAME$** - Retrieves a list of all $STUDLY_NAME$s.
- * - **GET /$STUDLY_NAME$/{id}** - Retrieves the details of a specific $STUDLY_NAME$.
- * - **POST /$STUDLY_NAME$** - Creates a new $STUDLY_NAME$ with the provided data.
- * - **PUT /$STUDLY_NAME$/{id}** - Updates the details of an existing $STUDLY_NAME$.
- * - **DELETE /$STUDLY_NAME$/{id}** - Deletes the specified $STUDLY_NAME$ from the system.
+ * - **GET /$LOWER_NAME$** - Retrieves a list of all $LOWER_NAME$s.
+ * - **GET /$LOWER_NAME$/{id}** - Retrieves the details of a specific $LOWER_NAME$.
+ * - **POST /$LOWER_NAME$** - Creates a new $LOWER_NAME$ with the provided data.
+ * - **PUT /$LOWER_NAME$/{id}** - Updates the details of an existing $LOWER_NAME$.
+ * - **DELETE /$LOWER_NAME$/{id}** - Deletes the specified $LOWER_NAME$ from the system.
  *
  * All operations return standardized responses according to the API specification.
  */
@@ -34,29 +34,29 @@ class $CLASS$ extends Controller
         
     }
     
-    public function index(FilterRequest $request): ResponseBuilder
+    public function index(FilterRequest $request): SuccessResponseBuilder
     {
         return $this->responder->success($this->service->index($request->validated()));
     }
 
-    public function show($id): ResponseBuilder
+    public function show($id): SuccessResponseBuilder
     {
         return $this->responder->success($this->service->show($id));
     }
 
-    public function store($STUDLY_NAME$StoreRequest $request): ResponseBuilder
+    public function store($STUDLY_NAME$StoreRequest $request): SuccessResponseBuilder
     {
         return $this->responder->success($this->service->store($request->validated()));
     }
 
-    public function update($STUDLY_NAME$UpdateRequest $request, $id): ResponseBuilder
+    public function update($STUDLY_NAME$UpdateRequest $request, $id): SuccessResponseBuilder
     {
         $this->service->update($id, $request->validated());
 
         return $this->responder->success();
     }
 
-    public function destroy($id): ResponseBuilder
+    public function destroy($id): SuccessResponseBuilder
     {
         $this->service->destroy($id);
         
