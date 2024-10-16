@@ -9,6 +9,7 @@ use App\Repositories\BaseRepository\Interfaces\Repository;
  * Class BaseRepository
  *
  * This class implements the Repository interface and provides
+ * basic operations for Eloquent models.
  *
  * @package App\Repositories\BaseRepository
  */

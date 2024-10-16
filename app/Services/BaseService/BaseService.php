@@ -9,6 +9,7 @@ use App\Services\BaseService\Interfaces\Service;
  * Class BaseService
  *
  * This class implements the Service interface and provides
+ * basic CRUD operations using a repository.
  *
  * @package App\Services\BaseService
  */

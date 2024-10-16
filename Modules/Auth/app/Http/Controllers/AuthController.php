@@ -3,6 +3,7 @@
 namespace Modules\Auth\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use Flugg\Responder\Http\Responses\SuccessResponseBuilder;
 use Flugg\Responder\Responder;
 use Modules\Auth\Http\Requests\LoginRequest;
 use Modules\Auth\Http\Requests\RegisterRequest;
@@ -24,28 +25,56 @@ use Modules\Auth\Services\AuthService;
  */
 class AuthController extends Controller
 {
+    /**
+     * AuthController constructor.
+     *
+     * @param AuthService $authService The authentication service.
+     * @param Responder $responder The responder for building responses.
+     */
     public function __construct(
         protected AuthService $authService,
         protected Responder $responder
     ) {
     }
 
-    public function register(RegisterRequest $request)
+    /**
+     * Register a new user.
+     *
+     * @param RegisterRequest $request The registration request.
+     * @return SuccessResponseBuilder The success response with registration data.
+     */
+    public function register(RegisterRequest $request): SuccessResponseBuilder
     {
         return $this->responder->success($this->authService->register($request->validated()));
     }
 
-    public function login(LoginRequest $request)
+    /**
+     * Authenticate a user and return a token.
+     *
+     * @param LoginRequest $request The login request.
+     * @return SuccessResponseBuilder The success response with login data.
+     */
+    public function login(LoginRequest $request): SuccessResponseBuilder
     {
         return $this->responder->success($this->authService->login($request->validated()));
     }
 
-    public function logout()
+    /**
+     * Log out the authenticated user.
+     *
+     * @return SuccessResponseBuilder The success response after logout.
+     */
+    public function logout(): SuccessResponseBuilder
     {
         return $this->responder->success($this->authService->logout());
     }
 
-    public function refresh()
+    /**
+     * Refresh the authentication token.
+     *
+     * @return SuccessResponseBuilder The success response with refreshed token data.
+     */
+    public function refresh(): SuccessResponseBuilder
     {
         return $this->responder->success($this->authService->refresh());
     }
