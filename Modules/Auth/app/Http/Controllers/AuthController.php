@@ -29,7 +29,7 @@ class AuthController extends Controller
      * AuthController constructor.
      *
      * @param AuthService $authService The authentication service.
-     * @param Responder $responder The responder for building responses.
+     * @param Responder   $responder   The responder for building responses.
      */
     public function __construct(
         protected AuthService $authService,
@@ -40,7 +40,7 @@ class AuthController extends Controller
     /**
      * Register a new user.
      *
-     * @param RegisterRequest $request The registration request.
+     * @param  RegisterRequest        $request The registration request.
      * @return SuccessResponseBuilder The success response with registration data.
      */
     public function register(RegisterRequest $request): SuccessResponseBuilder
@@ -51,7 +51,7 @@ class AuthController extends Controller
     /**
      * Authenticate a user and return a token.
      *
-     * @param LoginRequest $request The login request.
+     * @param  LoginRequest           $request The login request.
      * @return SuccessResponseBuilder The success response with login data.
      */
     public function login(LoginRequest $request): SuccessResponseBuilder

@@ -33,7 +33,7 @@ class BaseRepository implements Repository
     /**
      * Get all records.
      *
-     * @param array $select Columns to select.
+     * @param  array $select Columns to select.
      * @return mixed
      */
     public function get(array $select = ['*']): mixed
@@ -44,7 +44,7 @@ class BaseRepository implements Repository
     /**
      * Get all records.
      *
-     * @param array $select Columns to select.
+     * @param  array $select Columns to select.
      * @return mixed
      */
     public function all(array $select = ['*']): mixed
@@ -55,7 +55,7 @@ class BaseRepository implements Repository
     /**
      * Paginate the results.
      *
-     * @param int $paginate Number of items per page.
+     * @param  int   $paginate Number of items per page.
      * @return mixed
      */
     public function paginate(int $paginate = 10): mixed
@@ -66,7 +66,7 @@ class BaseRepository implements Repository
     /**
      * Find a record by its ID.
      *
-     * @param int $id
+     * @param  int   $id
      * @return mixed
      */
     public function find(int $id): mixed
@@ -77,7 +77,7 @@ class BaseRepository implements Repository
     /**
      * Find a record by its ID or throw an exception if not found.
      *
-     * @param int $id
+     * @param  int                                                  $id
      * @return mixed
      * @throws \Illuminate\Database\Eloquent\ModelNotFoundException
      */
@@ -89,7 +89,7 @@ class BaseRepository implements Repository
     /**
      * Create a new record.
      *
-     * @param array $data
+     * @param  array $data
      * @return mixed
      */
     public function create(array $data): mixed
@@ -100,8 +100,8 @@ class BaseRepository implements Repository
     /**
      * Attach related models.
      *
-     * @param string $relation
-     * @param array $attributes
+     * @param  string $relation
+     * @param  array  $attributes
      * @return self
      */
     public function attach(string $relation, array $attributes = []): self
@@ -114,8 +114,8 @@ class BaseRepository implements Repository
     /**
      * Update an existing record.
      *
-     * @param int $id
-     * @param array $data
+     * @param  int      $id
+     * @param  array    $data
      * @return int|null
      */
     public function update(int $id, array $data): ?int
@@ -126,8 +126,8 @@ class BaseRepository implements Repository
     /**
      * Sync related models.
      *
-     * @param string $relation
-     * @param array $attributes
+     * @param  string $relation
+     * @param  array  $attributes
      * @return self
      */
     public function sync(string $relation, array $attributes = []): self
@@ -140,7 +140,7 @@ class BaseRepository implements Repository
     /**
      * Delete a record.
      *
-     * @param int $id
+     * @param  int       $id
      * @return bool|null
      */
     public function delete(int $id): ?bool
@@ -151,7 +151,7 @@ class BaseRepository implements Repository
     /**
      * Add a "with" clause to the query.
      *
-     * @param mixed ...$with
+     * @param  mixed ...$with
      * @return self
      */
     public function with(...$with): self
@@ -164,7 +164,7 @@ class BaseRepository implements Repository
     /**
      * Add a "where" clause to the query.
      *
-     * @param mixed ...$where
+     * @param  mixed ...$where
      * @return self
      */
     public function where(...$where): self
@@ -177,7 +177,7 @@ class BaseRepository implements Repository
     /**
      * Set the columns to be selected.
      *
-     * @param mixed ...$select
+     * @param  mixed ...$select
      * @return self
      */
     public function select(...$select): self
@@ -190,7 +190,7 @@ class BaseRepository implements Repository
     /**
      * Add a search condition to the query.
      *
-     * @param string $search
+     * @param  string $search
      * @return self
      */
     public function search(string $search): self
@@ -203,8 +203,8 @@ class BaseRepository implements Repository
     /**
      * Set the order for the query results.
      *
-     * @param string $column
-     * @param string $direction
+     * @param  string $column
+     * @param  string $direction
      * @return self
      */
     public function order(string $column, string $direction = 'asc'): self
@@ -217,7 +217,7 @@ class BaseRepository implements Repository
     /**
      * Get the first record matching the query.
      *
-     * @param array $select Columns to select
+     * @param  array $select Columns to select
      * @return mixed
      */
     public function first(array $select = ['*']): mixed

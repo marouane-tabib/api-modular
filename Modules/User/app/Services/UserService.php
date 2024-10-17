@@ -34,7 +34,7 @@ class UserService extends BaseService
     /**
      * Register a new user.
      *
-     * @param array $credentials The user credentials including password.
+     * @param  array           $credentials The user credentials including password.
      * @return Authenticatable The newly registered user.
      */
     public function register(array $credentials): Authenticatable

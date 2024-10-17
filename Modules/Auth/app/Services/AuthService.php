@@ -31,7 +31,7 @@ class AuthService
     /**
      * Register a new user and return authentication information.
      *
-     * @param array $credentials The user credentials for registration.
+     * @param  array $credentials The user credentials for registration.
      * @return array The authentication information.
      */
     public function register(array $credentials)
@@ -44,8 +44,8 @@ class AuthService
     /**
      * Attempt to log in a user and return authentication information.
      *
-     * @param array $credentials The user credentials for login.
-     * @return array The authentication information.
+     * @param  array                 $credentials The user credentials for login.
+     * @return array                 The authentication information.
      * @throws UnauthorizedException If the login attempt fails.
      */
     public function login(array $credentials)
@@ -62,7 +62,6 @@ class AuthService
     /**
      * Log out the currently authenticated user.
      *
-     * @return void
      */
     public function logout()
     {
@@ -82,8 +81,8 @@ class AuthService
     /**
      * Generate authentication information for a given token.
      *
-     * @param string $token The authentication token.
-     * @return array The authentication information.
+     * @param  string $token The authentication token.
+     * @return array  The authentication information.
      */
     protected function authInformation($token)
     {

@@ -30,8 +30,8 @@ class UserController extends Controller
     /**
      * UserController constructor.
      *
-     * @param UserService $service The user service instance.
-     * @param Responder $responder The responder instance for building responses.
+     * @param UserService $service   The user service instance.
+     * @param Responder   $responder The responder instance for building responses.
      */
     public function __construct(
         protected UserService $service,
@@ -42,7 +42,7 @@ class UserController extends Controller
     /**
      * Retrieve a list of all Users.
      *
-     * @param FilterRequest $request The filter request instance.
+     * @param  FilterRequest          $request The filter request instance.
      * @return SuccessResponseBuilder The success response with the list of users.
      */
     public function index(FilterRequest $request): SuccessResponseBuilder
@@ -53,7 +53,7 @@ class UserController extends Controller
     /**
      * Retrieve the details of a specific User.
      *
-     * @param int $id The ID of the user to retrieve.
+     * @param  int                    $id The ID of the user to retrieve.
      * @return SuccessResponseBuilder The success response with the user details.
      */
     public function show($id): SuccessResponseBuilder
@@ -64,7 +64,7 @@ class UserController extends Controller
     /**
      * Create a new User with the provided data.
      *
-     * @param UserStoreRequest $request The user store request instance.
+     * @param  UserStoreRequest       $request The user store request instance.
      * @return SuccessResponseBuilder The success response with the created user data.
      */
     public function store(UserStoreRequest $request): SuccessResponseBuilder
@@ -75,8 +75,8 @@ class UserController extends Controller
     /**
      * Update the details of an existing User.
      *
-     * @param UserUpdateRequest $request The user update request instance.
-     * @param int $id The ID of the user to update.
+     * @param  UserUpdateRequest      $request The user update request instance.
+     * @param  int                    $id      The ID of the user to update.
      * @return SuccessResponseBuilder The success response after updating the user.
      */
     public function update(UserUpdateRequest $request, $id): SuccessResponseBuilder
@@ -89,7 +89,7 @@ class UserController extends Controller
     /**
      * Delete the specified User from the system.
      *
-     * @param int $id The ID of the user to delete.
+     * @param  int                    $id The ID of the user to delete.
      * @return SuccessResponseBuilder The success response after deleting the user.
      */
     public function destroy($id): SuccessResponseBuilder
