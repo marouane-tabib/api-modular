@@ -21,3 +21,4 @@ yarn-error.log
 /public/docs
 .scribe
 .php-cs-fixer.cache
+reports
