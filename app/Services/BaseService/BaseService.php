@@ -31,12 +31,12 @@ class BaseService implements Service
     }
 
     /**
-     * Retrieve and paginate a list of resources.
+     * Retrieve and paginate a list of records.
      *
-     * @param  array $data An array of parameters for filtering, sorting, and pagination
-     * @return mixed The paginated result set
+     * @param  array    $data An array of parameters for filtering, sorting, and pagination
+     * @return iterable The paginated result set
      */
-    public function index(array $data): mixed
+    public function index(array $data): iterable
     {
         return $this->repository
             ->search($data['search'] ?? '')
@@ -45,46 +45,49 @@ class BaseService implements Service
     }
 
     /**
-     * Create a new resource.
+     * Create a new record.
      *
-     * @param  array $data The data for creating the new resource
-     * @return mixed The newly created resource
+     * @param  array  $data The data for creating the new record
+     * @return object The newly created record
      */
-    public function store(array $data): mixed
+    public function store(array $data): object
     {
         return $this->repository->create($data);
     }
 
     /**
-     * Retrieve a specific resource by its ID.
+     * Retrieve a specific record by its ID or UUID.
      *
-     * @param  int   $id The ID of the resource to retrieve
-     * @return mixed The retrieved resource
+     * @param  int|string $id The ID or UUID of the record to retrieve
+     * @return object     The retrieved record
+     * @throws \Exception If the record is not found
      */
-    public function show(int $id): mixed
+    public function show(int|string $id): object
     {
         return $this->repository->findOrFail($id);
     }
 
     /**
-     * Update an existing resource.
+     * Update an existing record.
      *
-     * @param  int      $id   The ID of the resource to update
-     * @param  array    $data The data for updating the resource
-     * @return int|null The number of affected rows or null if the update failed
+     * @param  int|string $id   The ID or UUID of the record to update
+     * @param  array      $data The data for updating the record
+     * @return bool       True if the update was successful
+     * @throws \Exception If the record is not found
      */
-    public function update(int $id, array $data): ?int
+    public function update(int|string $id, array $data): bool
     {
         return $this->repository->update($id, $data);
     }
 
     /**
-     * Delete a specific resource.
+     * Delete a specific record.
      *
-     * @param  int       $id The ID of the resource to delete
-     * @return bool|null True if the deletion was successful, false or null otherwise
+     * @param  int|string $id The ID or UUID of the record to delete
+     * @return bool       True if the deletion was successful
+     * @throws \Exception If the record is not found
      */
-    public function destroy(int $id): ?bool
+    public function destroy(int|string $id): bool
     {
         return $this->repository->delete($id);
     }
