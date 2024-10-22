@@ -12,51 +12,51 @@ interface Repository
     /**
      * Retrieve all records.
      *
-     * @param  array $select Columns to select
-     * @return mixed
+     * @param  array    $select Columns to select
+     * @return iterable
      */
-    public function all(array $select = ['*']): mixed;
+    public function all(array $select = ['*']): iterable;
 
     /**
      * Get records based on the current query.
      *
-     * @param  array $select Columns to select
-     * @return mixed
+     * @param  array    $select Columns to select
+     * @return iterable
      */
-    public function get(array $select = ['*']): mixed;
+    public function get(array $select = ['*']): iterable;
 
     /**
      * Paginate the results.
      *
-     * @param  int   $paginate Number of items per page
-     * @return mixed
+     * @param  int      $perPage Number of items per page
+     * @return iterable
      */
-    public function paginate(int $paginate = 10): mixed;
+    public function paginate(int $perPage = 10): iterable;
 
     /**
      * Find a record by its ID.
      *
-     * @param  int   $id
-     * @return mixed
+     * @param  int|string $id
+     * @return ?object
      */
-    public function find(int $id): mixed;
+    public function find(int|string $id): ?object;
 
     /**
      * Find a record by its ID or throw an exception if not found.
      *
-     * @param  int                                                  $id
-     * @return mixed
-     * @throws \Illuminate\Database\Eloquent\ModelNotFoundException
+     * @param  int|string $id
+     * @return object
+     * @throws \Exception If the record is not found
      */
-    public function findOrFail(int $id): mixed;
+    public function findOrFail(int|string $id): object;
 
     /**
      * Create a new record.
      *
-     * @param  array $data
-     * @return mixed
+     * @param  array  $data
+     * @return object
      */
-    public function create(array $data): mixed;
+    public function create(array $data): object;
 
     /**
      * Attach related models.
@@ -70,11 +70,12 @@ interface Repository
     /**
      * Update an existing record.
      *
-     * @param  int      $id
-     * @param  array    $data
-     * @return int|null
+     * @param  int|string $id
+     * @param  array      $data
+     * @return bool
+     * @throws \Exception If the record is not found
      */
-    public function update(int $id, array $data): ?int;
+    public function update(int|string $id, array $data): bool;
 
     /**
      * Sync related models.
@@ -88,10 +89,11 @@ interface Repository
     /**
      * Delete a record.
      *
-     * @param  int       $id
-     * @return bool|null
+     * @param  int|string $id
+     * @return bool
+     * @throws \Exception If the record is not found
      */
-    public function delete(int $id): ?bool;
+    public function delete(int|string $id): bool;
 
     /**
      * Add a "with" clause to the query.
@@ -137,8 +139,8 @@ interface Repository
     /**
      * Get the first record matching the query.
      *
-     * @param  array $select Columns to select
-     * @return mixed
+     * @param  array   $select Columns to select
+     * @return ?object
      */
-    public function first(array $select = ['*']): mixed;
+    public function first(array $select = ['*']): ?object;
 }
