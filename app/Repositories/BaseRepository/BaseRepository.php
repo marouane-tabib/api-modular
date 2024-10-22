@@ -33,10 +33,10 @@ class BaseRepository implements Repository
     /**
      * Get all records.
      *
-     * @param  array $select Columns to select.
-     * @return mixed
+     * @param  array    $select Columns to select.
+     * @return iterable
      */
-    public function get(array $select = ['*']): mixed
+    public function get(array $select = ['*']): iterable
     {
         return $this->model->get($select);
     }
@@ -44,10 +44,10 @@ class BaseRepository implements Repository
     /**
      * Get all records.
      *
-     * @param  array $select Columns to select.
-     * @return mixed
+     * @param  array    $select Columns to select
+     * @return iterable
      */
-    public function all(array $select = ['*']): mixed
+    public function all(array $select = ['*']): iterable
     {
         return $this->model->all($select);
     }
@@ -55,10 +55,10 @@ class BaseRepository implements Repository
     /**
      * Paginate the results.
      *
-     * @param  int   $paginate Number of items per page.
-     * @return mixed
+     * @param  int      $paginate Number of items per page.
+     * @return iterable
      */
-    public function paginate(int $paginate = 10): mixed
+    public function paginate(int $paginate = 10): iterable
     {
         return $this->model->paginate($paginate);
     }
@@ -66,10 +66,10 @@ class BaseRepository implements Repository
     /**
      * Find a record by its ID.
      *
-     * @param  int   $id
-     * @return mixed
+     * @param  int|string $id
+     * @return ?object
      */
-    public function find(int $id): mixed
+    public function find(int|string $id): ?object
     {
         return $this->model->find($id);
     }
@@ -77,11 +77,11 @@ class BaseRepository implements Repository
     /**
      * Find a record by its ID or throw an exception if not found.
      *
-     * @param  int                                                  $id
-     * @return mixed
+     * @param  int|string                                           $id
+     * @return object
      * @throws \Illuminate\Database\Eloquent\ModelNotFoundException
      */
-    public function findOrFail(int $id): mixed
+    public function findOrFail(int|string $id): object
     {
         return $this->model->findOrFail($id);
     }
@@ -89,10 +89,10 @@ class BaseRepository implements Repository
     /**
      * Create a new record.
      *
-     * @param  array $data
-     * @return mixed
+     * @param  array  $data
+     * @return object
      */
-    public function create(array $data): mixed
+    public function create(array $data): object
     {
         return $this->model->create($data);
     }
@@ -114,13 +114,13 @@ class BaseRepository implements Repository
     /**
      * Update an existing record.
      *
-     * @param  int      $id
-     * @param  array    $data
-     * @return int|null
+     * @param  int|string $id
+     * @param  array      $data
+     * @return bool
      */
-    public function update(int $id, array $data): ?int
+    public function update(int|string $id, array $data): bool
     {
-        return $this->findOrFail($id)->update($data);
+        return (bool) $this->findOrFail($id)->update($data);
     }
 
     /**
@@ -140,12 +140,12 @@ class BaseRepository implements Repository
     /**
      * Delete a record.
      *
-     * @param  int       $id
-     * @return bool|null
+     * @param  int|string $id
+     * @return bool
      */
-    public function delete(int $id): ?bool
+    public function delete(int|string $id): bool
     {
-        return $this->findOrFail($id)->delete();
+        return (bool) $this->findOrFail($id)->delete();
     }
 
     /**
@@ -217,10 +217,10 @@ class BaseRepository implements Repository
     /**
      * Get the first record matching the query.
      *
-     * @param  array $select Columns to select
-     * @return mixed
+     * @param  array   $select Columns to select
+     * @return ?object
      */
-    public function first(array $select = ['*']): mixed
+    public function first(array $select = ['*']): ?object
     {
         return $this->model->first($select);
     }
