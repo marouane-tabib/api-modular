@@ -13,6 +13,7 @@ class GenerateHtmlReport extends Command
 
     public function handle()
     {
+        // test
         $timestamp = now()->format('Y_m_d_His');
         $reportFileName = "reports/html/{$timestamp}_report";
 
